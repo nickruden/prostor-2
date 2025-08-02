@@ -82,6 +82,7 @@
 
     .my-button.--theme-white {
         border: 2px solid var(--color-green);
+        padding: 13px 0px;
     }
 }
 
@@ -89,5 +90,10 @@
     .my-button {
         padding: 15.4px 0px;
         font-size: 16px;
+    }
+
+    .my-button.--theme-white {
+        border: 2px solid var(--color-green);
+        padding: 13.8px 0px;
     }
 }
