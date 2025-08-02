@@ -1,0 +1,93 @@
+.my-button {
+    font-family: "Montserrat";
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: .0em;
+    background: transparent;
+    padding: 16.4px 0px;
+    width: 298px;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-button.--size-m {
+    padding: 15px 0px;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.my-button.--size-s {
+    padding: 14.5px 0px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 19px;
+    width: 208px;
+}
+
+.my-button.--theme-white {
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+.my-button.--bordered {
+    color: var(--color-darkGreen);
+    border: 1px solid var(--color-darkGreen);
+}
+
+.my-button.--bordered-darkBlue {
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+}
+
+.my-button.--bordered.--size-m,
+.my-button.--bordered-darkBlue.--size-m {
+    padding: 14.2px 0px;
+}
+
+.my-button.--bordered.--size-s,
+.my-button.--bordered-darkBlue.--size-s {
+    padding: 13.7px 0px;
+}
+
+@media (max-width: 1581px) {
+    .my-button {
+        padding: 15px 0px;
+        width: 278px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .my-button {
+        padding: 14px 0px;
+        width: 250px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 769px) {
+    .my-button {
+        padding: 15px 0px;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .my-button.--theme-white {
+        border: 2px solid var(--color-green);
+    }
+}
+
+@media (max-width: 575px) {
+    .my-button {
+        padding: 15.4px 0px;
+        font-size: 16px;
+    }
+}

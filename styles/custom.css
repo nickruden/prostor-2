@@ -1,0 +1,194 @@
+/* Заголовки */
+h2,
+.h2 {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 575px) {
+
+    h2,
+    .h2 {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Секции */
+.main> :first-child {
+    padding-top: 120px;
+}
+
+@media (max-width: 1581px) {
+    .main> :first-child {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width: 769px) {
+    .main> :first-child {
+        padding-top: 75px;
+    }
+}
+
+@media (max-width: 575px) {
+    .main> :first-child {
+        padding-top: 55px;
+    }
+}
+
+section {
+    padding-top: 120px;
+}
+
+@media (max-width: 991px) {
+    section {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 575px) {
+    section {
+        padding-top: 80px;
+    }
+}
+
+
+/* Цвета фона */
+.green-bg {
+    background: var(--color-darkGreen);
+}
+
+.green-bg * {
+    color: #FFF;
+}
+
+.colored-bg * {
+    color: #FFF;
+}
+
+
+/* Рамки */
+.border-small {
+    border: 1px solid var(--color-border);
+}
+
+.border-medium {
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-medium);
+}
+
+.border-large {
+    border: 4px solid var(--color-border);
+    border-radius: var(--radius-large);
+}
+
+
+/* Контакты */
+.phone-link {
+    font-size: 20px;
+    letter-spacing: var(--latter-spacing);
+    color: #6F6F6F;
+    display: flex;
+    align-items: center;
+}
+
+.phone-link:hover {
+    color: var(--color-darkGreen);
+}
+
+.phone-link::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.78977 1.46863L2.7812 0.777011C3.32416 0.397668 3.98659 0.228832 4.64488 0.302008C5.30317 0.375183 5.91235 0.685371 6.35875 1.17469L7.8291 2.78657C8.21298 3.20747 8.45544 3.738 8.52249 4.30371C8.58953 4.86942 8.47778 5.44193 8.20293 5.9409L7.22543 7.71575C7.19685 7.76761 7.18777 7.82798 7.19983 7.88595C7.2811 8.27375 7.77362 8.91917 8.69034 9.74072C9.35688 10.3374 9.91211 10.7284 10.3341 10.9105C10.6287 11.0383 10.7682 11.0406 10.817 11.0079L12.5214 9.80679C12.9868 9.47884 13.5433 9.30476 14.1126 9.30896C14.682 9.31316 15.2358 9.49542 15.6964 9.83019L17.4529 11.1081C17.987 11.4967 18.362 12.066 18.5082 12.7101C18.6544 13.3543 18.5619 14.0297 18.2479 14.6108L17.6725 15.6764C17.3669 16.2415 16.9202 16.7179 16.3759 17.059C15.8316 17.4002 15.2082 17.5946 14.5664 17.6233C11.7329 17.7499 8.68728 16.3228 5.41799 13.3958C2.14432 10.465 0.390504 7.59102 0.208063 4.75599C0.167166 4.11833 0.291214 3.48089 0.568253 2.9051C0.845292 2.32931 1.26598 1.8346 1.78977 1.46863ZM2.64215 2.6892C2.32794 2.90861 2.07551 3.20525 1.9092 3.55052C1.74288 3.89579 1.66828 4.27807 1.69257 4.66054C1.84612 7.04467 3.40106 9.59236 6.41048 12.2873C9.41553 14.9784 12.1156 16.2432 14.5008 16.1374C14.8856 16.1199 15.2594 16.0032 15.5858 15.7984C15.9121 15.5937 16.1799 15.308 16.3631 14.9691L16.9394 13.9031C17.0822 13.6389 17.1243 13.3318 17.0578 13.039C16.9913 12.7461 16.8208 12.4873 16.5779 12.3107L14.8226 11.0334C14.6132 10.881 14.3613 10.798 14.1023 10.7961C13.8433 10.7942 13.5902 10.8734 13.3785 11.0227L11.67 12.2272C10.6748 12.9169 9.38294 12.3583 7.69785 10.8492C6.5628 9.83308 5.90693 8.97294 5.74318 8.19045C5.65887 7.78382 5.72206 7.36222 5.92206 6.99805L6.89956 5.2232C7.02458 4.99639 7.07544 4.73612 7.045 4.47892C7.01456 4.22173 6.90435 3.98052 6.72984 3.78916L5.25949 2.17728C5.05665 1.95507 4.77994 1.81419 4.48091 1.78089C4.18189 1.7476 3.88096 1.82417 3.63421 1.99633L2.64215 2.6892Z' fill='%231F4719'/%3E%3C/svg%3E");
+    width: 19px;
+    height: 18px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 13px
+}
+
+.email-link {
+    font-size: 20px;
+    letter-spacing: var(--latter-spacing);
+    color: #6F6F6F;
+    display: flex;
+    align-items: center;
+}
+
+.email-link :hover {
+    color: var(--color-darkGreen);
+}
+
+.email-link::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='20' viewBox='0 0 22 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.2625 5.25C2.15204 5.25 2.0625 5.33954 2.0625 5.45V15.7375C2.0625 15.848 2.15204 15.9375 2.2625 15.9375H19.7375C19.848 15.9375 19.9375 15.848 19.9375 15.7375V5.45C19.9375 5.33954 19.848 5.25 19.7375 5.25H2.2625ZM5.67705 6.8109C5.49946 6.70884 5.57188 6.4375 5.77671 6.4375H16.2233C16.4281 6.4375 16.5005 6.70884 16.3229 6.8109L11.0997 9.81284C11.038 9.84831 10.962 9.84831 10.9003 9.81284L5.67705 6.8109ZM3.4375 7.30322C3.4375 7.14931 3.60407 7.05308 3.73741 7.12996L10.6133 11.0947L10.9066 11.2496C10.9651 11.2804 11.0349 11.2804 11.0934 11.2496L11.3867 11.0947L18.2626 7.12996C18.3959 7.05308 18.5625 7.14931 18.5625 7.30322V14.55C18.5625 14.6605 18.473 14.75 18.3625 14.75H3.6375C3.52704 14.75 3.4375 14.6605 3.4375 14.55V7.30322Z' fill='%231F4719'/%3E%3C/svg%3E");
+    width: 22px;
+    height: 19px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 13px
+}
+
+
+/* Оверлей */
+.my-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    display: none;
+}
+
+.my-overlay.active {
+    z-index: 100;
+    display: block;
+}
+
+
+/* Флексы */
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+
+/* Видимость */
+.d-none {
+    display: none !important;
+}
+
+
+@media (min-width: 992px) {
+    .d-lg-none {
+        display: none !important;
+    }
+
+    .d-lg-flex {
+        display: flex !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .d-md-none {
+        display: none !important;
+    }
+
+    .d-md-flex {
+        display: flex !important;
+    }
+}

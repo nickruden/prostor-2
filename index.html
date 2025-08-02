@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prostor</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/x-icon">
+
+    <!-- БИБЛИОТЕКИ -->
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css">
+
+    <!-- ОБЩИЕ СТИЛИ -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/custom.css">
+
+    <link rel="stylesheet" href="./styles/UI/button.css">
+
+    <link rel="stylesheet" href="./styles/components/header.css">
+
+
+    <!-- СТИЛИ СТРАНИЦЫ -->
+    <link rel="stylesheet" href="./styles/pages/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="my-container">
+            <div class="header__inner">
+                <a href="./index.html" class="header__logo">
+                    <img src="./assets/images/logo-white.svg" alt="логотип" class="logo-img">
+                </a>
+                <div class="header__controls">
+                    <div class="city-select">
+                        <button class="city-select__current">Санкт-Петербург</button>
+                        <div class="city-select__body">
+                            <div class="city-select__search-line">
+                                <input type="text" placeholder="Ваш город">
+                            </div>
+                            <div class="city-select__items">
+                                <div class="border-small city-select__item">Санкт-Петербург</div>
+                                <div class="border-small city-select__item">Москва</div>
+                                <div class="border-small city-select__item">Самара</div>
+                                <div class="border-small city-select__item">Тверь</div>
+                                <div class="border-small city-select__item">Псков</div>
+                                <div class="border-small city-select__item">Казань</div>
+                                <div class="border-small city-select__item">Ростов-на-Дону</div>
+                                <div class="border-small city-select__item">Сыктывкар</div>
+                                <div class="border-small city-select__item">Пермь</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:+79184051058" class="header__phone">
+                        <span class="phone-icon">
+                            <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.78977 1.46851L2.7812 0.776889C3.32416 0.397546 3.98659 0.22871 4.64488 0.301885C5.30317 0.375061 5.91236 0.685248 6.35875 1.17457L7.8291 2.78644C8.21298 3.20735 8.45544 3.73788 8.52249 4.30359C8.58953 4.8693 8.47778 5.4418 8.20293 5.94078L7.22543 7.71562C7.19685 7.76748 7.18777 7.82786 7.19983 7.88583C7.2811 8.27362 7.77362 8.91904 8.69034 9.7406C9.35688 10.3373 9.91211 10.7283 10.3341 10.9104C10.6287 11.0382 10.7682 11.0404 10.817 11.0077L12.5214 9.80667C12.9868 9.47872 13.5433 9.30464 14.1126 9.30884C14.682 9.31303 15.2358 9.4953 15.6964 9.83007L17.4529 11.108C17.987 11.4966 18.362 12.0659 18.5082 12.71C18.6544 13.3542 18.5619 14.0295 18.2479 14.6107L17.6725 15.6763C17.3669 16.2414 16.9202 16.7177 16.3759 17.0589C15.8316 17.4001 15.2082 17.5945 14.5664 17.6232C11.7329 17.7498 8.68728 16.3226 5.41799 13.3956C2.14432 10.4648 0.390504 7.5909 0.208063 4.75587C0.167166 4.11821 0.291214 3.48077 0.568253 2.90498C0.845292 2.32919 1.26598 1.83447 1.78977 1.46851ZM2.64215 2.68908C2.32794 2.90849 2.07552 3.20512 1.9092 3.5504C1.74288 3.89567 1.66828 4.27795 1.69257 4.66042C1.84612 7.04454 3.40106 9.59224 6.41048 12.2871C9.41553 14.9782 12.1156 16.2431 14.5008 16.1373C14.8856 16.1198 15.2594 16.003 15.5858 15.7983C15.9121 15.5936 16.1799 15.3078 16.3631 14.9689L16.9394 13.903C17.0822 13.6388 17.1243 13.3317 17.0578 13.0388C16.9913 12.746 16.8208 12.4872 16.5779 12.3105L14.8227 11.0333C14.6132 10.8809 14.3613 10.7979 14.1023 10.796C13.8433 10.794 13.5902 10.8733 13.3785 11.0226L11.67 12.2271C10.6748 12.9168 9.38294 12.3582 7.69785 10.8491C6.5628 9.83296 5.90693 8.97282 5.74318 8.19033C5.65887 7.7837 5.72206 7.3621 5.92206 6.99793L6.89956 5.22308C7.02458 4.99627 7.07544 4.736 7.045 4.4788C7.01456 4.22161 6.90435 3.9804 6.72984 3.78904L5.25949 2.17716C5.05665 1.95495 4.77994 1.81406 4.48091 1.78077C4.18189 1.74748 3.88096 1.82404 3.63421 1.9962L2.64215 2.68908Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span>+7 (918) 405-10-58</span>
+                    </a>
+                    <button class="burger-button desctop-burger" data-open-menu="desktop" no-change>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="burger-button mobile-burger" data-open-menu="mobile">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header__desctop-menu desctop-menu" data-id-menu="desktop">
+                    <div class="desctop-menu__content">
+                        <header>
+                            <h3>меню</h3>
+                            <button class="button-close-desctop-menu">закрыть</button>
+                        </header>
+                        <nav class="desctop-menu__nav">
+                            <ul class="desctop-menu__nav-items">
+                                <li><a href="./pages/catalog.html">Каталог</a></li>
+                                <li><a href="./pages/blog.html">Блог</a></li>
+                                <li><a href="./pages/about.html">О нас</a></li>
+                                <li><a href="">Покупателям</a></li>
+                                <li><a href="./pages/contacts.html">Контакты</a></li>
+                                <li><a href="./pages/cooperation.html">Сотрудничество</a></li>
+                            </ul>
+                        </nav>
+                        <div class="desctop-menu__contacts">
+                            <div class="h3 desctop-menu__contacts-title">Остались ВОПРОСы?</div>
+                            <div class="desctop-menu__contacts-items">
+                                <a href="tel:+79184051058" class="phone-link">+7 (918) 405-10-58</a>
+                                <a href="mailto:info@ligorod.ru" class="email-link">info@ligorod.ru</a>
+                            </div>
+                            <div class="desctop-menu__cmd">
+                                <a href="" class="desctop-menu__cmd-item"><img src="./assets/images/socials/WA.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="./assets/images/socials/VK.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="./assets/images/socials/TG.svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__mobile mobile-menu" data-id-menu="mobile">
+
+            </div>
+        </div>
+    </header>
+    <div class="my-overlay"></div>
+
+    <main class="main">
+        <section class="hero-section">
+            <div class="my-container hero-section__container">
+                <div class="hero-section__inner">
+                    <div class="hero-section__header">
+                        <img src="./assets/images/logo-white.svg" alt="" class="hero-section__logo">
+                        <div class="hero-section__pre-title">Технологично, быстро, <br> надежно</div>
+                    </div>
+                    <div class="hero-section__decor-items">
+                        <div class="hero-section__decor-item">
+                            <div class="hero-section__decor-text">
+                                <span>10 лет</span>
+                                <span>на рынке</span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="hero-section__decor-item">
+                            <div class="hero-section__decor-text">
+                                <span>+ 100</span>
+                                <span>решений</span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-flex hero-section__butons">
+                        <a href="./pages/catalog.html" class="my-button --theme-white hero-section__link">Каталог</a>
+                        <button class="my-button">Оставить заявку</button>
+                    </div>
+                </div>
+                <div class="flex flex-column d-md-none hero-section__butons">
+                    <a href="./pages/catalog.html" class="my-button --theme-white hero-section__link">Каталог</a>
+                    <button class="my-button">Оставить заявку</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <!-- БИБЛИОТЕКИ -->
+    <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
+
+
+    <!-- ОБЩИЕ СКРИПТЫ -->
+    <script src="./assets/scripts/components/header.js"></script>
+</body>
+
+</html>
