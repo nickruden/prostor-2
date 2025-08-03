@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="./styles/custom.css">
 
     <link rel="stylesheet" href="./styles/UI/button.css">
+    <link rel="stylesheet" href="./styles/UI/input.css">
 
     <link rel="stylesheet" href="./styles/components/header.css">
+    <link rel="stylesheet" href="./styles/components/mini-form.css">
+    <link rel="stylesheet" href="./styles/components/catalog.css">
 
 
     <!-- СТИЛИ СТРАНИЦЫ -->
@@ -147,6 +150,233 @@
                 </div>
             </div>
         </section>
+        <section class="about">
+            <div class="my-container about__container">
+                <div class="about__body">
+                    <h2 class="about__title">О нас</h2>
+                    <div class="about__texts">
+                        <p>Наша команда работает по принципу — нет&nbsp;ничего невозможного, именно поэтому
+                            Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        <p>Наша команда работает по принципу — нет&nbsp;ничего невозможного, именно поэтому
+                            Калифорнийская изгородь имеет широкий спектр применения.</p>
+                    </div>
+                    <img src="./assets/images/pages/main/about/block-img.webp" alt="" class="about__mob-img d-md-none">
+                    <button class="my-button about__button">Подробнее</button>
+                </div>
+                <img src="./assets/images/pages/main/about/block-img.webp" alt="" class="about__image d-none d-md-flex">
+            </div>
+        </section>
+        <section class="advantages">
+            <div class="my-container">
+                <h2 class="advantages__title align-center">Преимущества</h2>
+                <div class="flex flex-column advantages__body">
+                    <div class="advantages__image-wrap border-radius-medium">
+                        <img src="./assets/images/pages/main/advantages/big-img.jpg" alt="">
+                    </div>
+                    <div class="flex advantages__items">
+                        <div class="border-medium border-radius-medium advantages__item">
+                            <img src="./assets/images/pages/main/advantages/item-icons/item-1.svg" alt=""
+                                class="advantages__item-icon">
+                            <div class="advantages__item-desc">
+                                <div class="h3">Инструменты</div>
+                                <div class="advantages__item-text fz-l">технологично быстро надежно</div>
+                            </div>
+                        </div>
+                        <div class="border-medium border-radius-medium advantages__item">
+                            <img src="./assets/images/pages/main/advantages/item-icons/item-2.svg" alt=""
+                                class="advantages__item-icon">
+                            <div class="advantages__item-desc">
+                                <div class="h3">Как настоящие</div>
+                                <div class="advantages__item-text fz-l">технологично быстро надежно</div>
+                            </div>
+                        </div>
+                        <div class="border-medium border-radius-medium advantages__item">
+                            <img src="./assets/images/pages/main/advantages/item-icons/item-3.svg" alt=""
+                                class="advantages__item-icon">
+                            <div class="advantages__item-desc">
+                                <div class="h3">Опыт работы</div>
+                                <div class="advantages__item-text fz-l">технологично быстро надежно</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mini-form">
+            <div class="my-container mini-form__container">
+                <div class="mini-form__inner green-bg border-radius-medium">
+                    <div class="mini-form__title">Скидка 5% <br> на&nbsp;первый заказ</div>
+                    <div class="mini-form__form">
+                        <div class="mini-form__fields">
+                            <input type="text" class="my-input --size-m --circle-border" placeholder="E-mail">
+                            <button class="my-button --size-m --bordered --theme-white">Оставить заявку</button>
+                        </div>
+                        <div class="mini-form__agree-text">
+                            Подписываясь, я принимаю <a href="">условия эксплуатации</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="catalog">
+            <div class="my-container">
+                <header>
+                    <h2>Каталог</h2>
+                    <div class="catalog__buttons">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <button class="my-button --theme-white --bordered--lightGren">МАФы</button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="my-button --theme-white --bordered--lightGren">Заборы</button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="my-button --theme-white --bordered--lightGren">Монтажные
+                                        работы</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="catalog__content">
+                    <div class="catalog__slider">
+                        <div class="swiper align-stretch">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="catalog-card border-medium border-radius-medium">
+                                        <div class="catalog-card__inner">
+                                            <div class="catalog-card__img-wrap">
+                                                <img src="./assets/images/components/catalog-card/card-1.jpg" alt="">
+                                            </div>
+                                            <div class="catalog-card__body">
+                                                <h3 class="catalog-card__title">Топиарий животные </h3>
+                                                <div class="catalog-card__price">
+                                                    <span class="catalog-card__old-price fz-m">200 999 ₽</span>
+                                                    <span class="catalog-card__actual-price">136 000 ₽</span>
+                                                </div>
+                                                <div class="flex space-between catalog-card__bottom">
+                                                    <div class="catalog-card__bottom-text">Купили 236 раз</div>
+                                                    <button class="catalog-card__button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="catalog-card border-medium border-radius-medium">
+                                        <div class="catalog-card__inner">
+                                            <div class="catalog-card__img-wrap">
+                                                <img src="./assets/images/components/catalog-card/card-1.jpg" alt="">
+                                            </div>
+                                            <div class="catalog-card__body">
+                                                <h3 class="catalog-card__title">Топиарий животные </h3>
+                                                <div class="catalog-card__price">
+                                                    <span class="catalog-card__old-price fz-m">200 999 ₽</span>
+                                                    <span class="catalog-card__actual-price">136 000 ₽</span>
+                                                </div>
+                                                <div class="flex space-between catalog-card__bottom">
+                                                    <div class="catalog-card__bottom-text">Купили 236 раз</div>
+                                                    <button class="catalog-card__button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="catalog-card border-medium border-radius-medium">
+                                        <div class="catalog-card__inner">
+                                            <div class="catalog-card__img-wrap">
+                                                <img src="./assets/images/components/catalog-card/card-1.jpg" alt="">
+                                            </div>
+                                            <div class="catalog-card__body">
+                                                <h3 class="catalog-card__title">Топиарий животные </h3>
+                                                <div class="catalog-card__price">
+                                                    <span class="catalog-card__old-price fz-m">200 999 ₽</span>
+                                                    <span class="catalog-card__actual-price">136 000 ₽</span>
+                                                </div>
+                                                <div class="flex space-between catalog-card__bottom">
+                                                    <div class="catalog-card__bottom-text">Купили 236 раз</div>
+                                                    <button class="catalog-card__button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="catalog-card border-medium border-radius-medium">
+                                        <div class="catalog-card__inner">
+                                            <div class="catalog-card__img-wrap">
+                                                <img src="./assets/images/components/catalog-card/card-1.jpg" alt="">
+                                            </div>
+                                            <div class="catalog-card__body">
+                                                <h3 class="catalog-card__title">Топиарий животные </h3>
+                                                <div class="catalog-card__price">
+                                                    <span class="catalog-card__old-price fz-m">200 999 ₽</span>
+                                                    <span class="catalog-card__actual-price">136 000 ₽</span>
+                                                </div>
+                                                <div class="flex space-between catalog-card__bottom">
+                                                    <div class="catalog-card__bottom-text">Купили 236 раз</div>
+                                                    <button class="catalog-card__button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="catalog-card border-medium border-radius-medium">
+                                        <div class="catalog-card__inner">
+                                            <div class="catalog-card__img-wrap">
+                                                <img src="./assets/images/components/catalog-card/card-1.jpg" alt="">
+                                            </div>
+                                            <div class="catalog-card__body">
+                                                <h3 class="catalog-card__title">Топиарий ландшафтный</h3>
+                                                <div class="catalog-card__price">
+                                                    <span class="catalog-card__old-price fz-m">200 999 ₽</span>
+                                                    <span class="catalog-card__actual-price">136 000 ₽</span>
+                                                </div>
+                                                <div class="flex space-between catalog-card__bottom">
+                                                    <div class="catalog-card__bottom-text">Купили 236 раз</div>
+                                                    <button class="catalog-card__button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="catalog-card border-medium border-radius-medium">
+                                        <div class="catalog-card__inner">
+                                            <div class="catalog-card__img-wrap">
+                                                <img src="./assets/images/components/catalog-card/card-1.jpg" alt="">
+                                            </div>
+                                            <div class="catalog-card__body">
+                                                <h3 class="catalog-card__title">Топиарий животные </h3>
+                                                <div class="catalog-card__price">
+                                                    <span class="catalog-card__old-price fz-m">200 999 ₽</span>
+                                                    <span class="catalog-card__actual-price">136 000 ₽</span>
+                                                </div>
+                                                <div class="flex space-between catalog-card__bottom">
+                                                    <div class="catalog-card__bottom-text">Купили 236 раз</div>
+                                                    <button class="catalog-card__button"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__bottom">
+                        <a href="" class="catalog__link fz-xl d-none d-md-flex">Показать больше</a>
+                        <div class="swiper-nav catalog__swiper-nav">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section></section>
     </main>
 
     <footer class="footer"></footer>
@@ -157,6 +387,107 @@
 
     <!-- ОБЩИЕ СКРИПТЫ -->
     <script src="./assets/scripts/components/header.js"></script>
+
+
+    <script>
+        const swiper1 = new Swiper(".catalog__buttons .swiper", {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            freeMode: true,
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            breakpoints: {
+                768: {
+                    spaceBetween: 20,
+                },
+                992: {
+                    spaceBetween: 24,
+                },
+            },
+        });
+
+        let swiperInstance = null;
+
+        function initSwiper() {
+            if (swiperInstance) {
+                swiperInstance.destroy(true, true);
+                swiperInstance = null;
+            }
+
+            const isMobile = window.innerWidth <= 768;
+            const wrapper = document.querySelector('.catalog__slider .swiper-wrapper');
+
+            if (isMobile) {
+                const slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
+                const groupedSlides = [];
+
+                for (let i = 0; i < slides.length; i += 3) {
+                    const newSlide = document.createElement('div');
+                    newSlide.classList.add('swiper-slide');
+                    newSlide.style.display = 'flex';
+                    newSlide.style.flexDirection = 'column';
+                    newSlide.style.gap = '20px';
+
+                    for (let j = i; j < i + 3 && j < slides.length; j++) {
+                        const card = slides[j].querySelector('.catalog-card');
+                        if (card) {
+                            newSlide.appendChild(card.cloneNode(true));
+                        }
+                    }
+
+                    groupedSlides.push(newSlide);
+                }
+
+                wrapper.innerHTML = '';
+                groupedSlides.forEach(slide => wrapper.appendChild(slide));
+            } else {
+                const cards = wrapper.querySelectorAll('.catalog-card');
+                wrapper.innerHTML = '';
+
+                cards.forEach(card => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+                    slide.appendChild(card);
+                    wrapper.appendChild(slide);
+                });
+            }
+
+            swiperInstance = new Swiper(".catalog__slider .swiper", {
+                spaceBetween: 20,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: ".catalog__swiper-nav .swiper-button-next",
+                    prevEl: ".catalog__swiper-nav .swiper-button-prev",
+                },
+                breakpoints: {
+                    769: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1320: {
+                        slidesPerView: 4,
+                    },
+                    1581: {
+                        slidesPerView: 5,
+                    },
+                },
+            });
+        }
+
+        let resizeTimeout;
+        function handleResize() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                initSwiper();
+            }, 200);
+        }
+
+        document.addEventListener('DOMContentLoaded', initSwiper);
+        window.addEventListener('resize', handleResize);
+
+    </script>
 </body>
 
 </html>

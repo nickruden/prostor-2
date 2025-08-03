@@ -1,0 +1,242 @@
+.catalog {}
+
+.catalog header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.catalog header h2 {
+    margin-bottom: 0;
+}
+
+.catalog__buttons {}
+
+.catalog__buttons .swiper {
+    overflow: visible;
+}
+
+.catalog__buttons .swiper-slide {
+    width: auto;
+}
+
+.catalog__buttons .swiper-slide .my-button {
+    width: auto;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+
+.catalog__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.catalog__slider {}
+
+.catalog__swiper {}
+
+.catalog-card {
+    padding: 13px 15px 20px;
+}
+
+.catalog-card__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.catalog-card__img-wrap {
+    border-radius: 10px;
+    width: 100%;
+    max-height: 162px;
+    overflow: hidden;
+}
+
+.catalog-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.catalog-card__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-card__title {
+    line-height: 1.2;
+    margin-bottom: 22px;
+    flex: 1;
+}
+
+@media (min-width: 1581px) {
+    .catalog-card__title {
+        font-size: 28px;
+    }
+}
+
+.catalog-card__price {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.catalog-card__old-price {
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing);
+    text-decoration: line-through;
+    color: var(--color-gray);
+}
+
+.catalog-card__actual-price {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.69px;
+    /* Сохраняем интервал между строками */
+    display: inline-block;
+    vertical-align: top;
+    /* Убираем зазор снизу */
+    position: relative;
+}
+
+.catalog-card__bottom {
+    align-items: flex-end;
+}
+
+.catalog-card__bottom-text {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 11px;
+    letter-spacing: 0.3px;
+    color: var(--dark-blue);
+    padding: 4px 8px;
+}
+
+.catalog-card__button {
+    width: 46px;
+    height: 46px;
+    background-color: var(--color-gray);
+    border-radius: 50%;
+    position: relative;
+}
+
+.catalog-card__button::after {
+    content: '';
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='26' height='21' viewBox='0 0 26 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6 9.31229L15.4 19.9995M21.4 9.31229L16.6 1M1 9.31229H25M2.8 9.31229L4.72 18.0996C4.8322 18.6441 5.13382 19.1324 5.57234 19.4796C6.01087 19.8267 6.55853 20.0107 7.12 19.9995H18.88C19.4415 20.0107 19.9891 19.8267 20.4277 19.4796C20.8662 19.1324 21.1678 18.6441 21.28 18.0996L23.32 9.31229M4 14.6559H22M4.6 9.31229L9.4 1M9.4 9.31229L10.6 19.9995' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    width: 26px;
+    height: 21px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.catalog__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog__link {
+    font-weight: 400;
+}
+
+@media (max-width: 1581px) {
+}
+
+@media (max-width: 1320px) {
+    .catalog header {
+        gap: 35px;
+        margin-bottom: 50px;
+    }
+
+    .catalog-card__title {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .catalog-card__price {
+        gap: 7px;
+    }
+}
+
+@media (max-width: 769px) {
+    .catalog__buttons .swiper-slide .my-button {
+        padding-left: 31px;
+        padding-right: 31px;
+    }
+
+    .catalog__slider .swiper-slide:last-child {
+        margin-bottom: 0;
+    }
+
+    .catalog-card {
+        padding: 16px 15px 22px;
+    }
+
+    .catalog-card__img {
+        border-radius: 12px;
+    }
+
+    .catalog-card__title {
+        margin-bottom: 22px;
+    }
+
+    .catalog-card__price {
+        gap: 13px;
+    }
+
+    .catalog-card__old-price {
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    .catalog-card__actual-price {
+        line-height: 1.2;
+        letter-spacing: 0px;
+    }
+
+    /* Обрезка лишнего пространства сверху */
+    .catalog-card__actual-price::before {
+        content: '';
+        display: block;
+        height: 0;
+        margin-top: calc((0.72 - 1.2) * 0.5em);
+        /* Подбираем коэффициент */
+    }
+
+    /* Обрезка снизу (если нужно) */
+    .catalog-card__actual-price::after {
+        content: '';
+        display: block;
+        height: 0;
+        margin-bottom: calc((0.72 - 1.2) * 0.5em);
+    }
+
+    .catalog-card__bottom-text {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 575px) {
+    .catalog header {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .catalog-card__title {
+        margin-bottom: 20px;
+    }
+
+    .catalog-card__old-price {
+        font-size: 14px;
+    }
+}

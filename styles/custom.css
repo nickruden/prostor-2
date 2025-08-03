@@ -2,13 +2,241 @@
 h2,
 .h2 {
     margin-bottom: 50px;
+    font-size: 64px;
+    color: var(--color-green);
+    /* Сохраняем интервал между строками */
+    display: inline-block;
+    vertical-align: top;
+    /* Убираем зазор снизу */
+    position: relative;
+}
+
+/* Обрезка лишнего пространства сверху */
+h2::before,
+.h2::before {
+    content: '';
+    display: block;
+    height: 0;
+    margin-top: calc((0.72 - 46.1px) * 0.5em);
+    /* Подбираем коэффициент */
+}
+
+/* Обрезка снизу (если нужно) */
+h2::after,
+.h2::after {
+    content: '';
+    display: block;
+    height: 0;
+    margin-bottom: calc((0.72 - 46.1px) * 0.5em);
+}
+
+h3,
+.h3 {
+    font-size: 30px;
+}
+
+@media (max-width: 1581px) {
+
+    h2,
+    .h2 {
+        font-size: 60px;
+    }
+
+    h3,
+    .h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1320px) {
+
+    h2,
+    .h2 {
+        font-size: 54px;
+    }
+
+    h3,
+    .h3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    h2,
+    .h2 {
+        font-size: 48px;
+    }
+
+    h3,
+    .h3 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 769px) {
+
+    h2,
+    .h2 {
+        font-size: 43px;
+        line-height: 100%;
+        margin-bottom: 40px;
+        /* Сохраняем интервал между строками */
+        display: inline-block;
+        vertical-align: top;
+        /* Убираем зазор снизу */
+        position: relative;
+    }
+
+    /* Обрезка лишнего пространства сверху */
+    h2::before,
+    .h2::before {
+        content: '';
+        display: block;
+        height: 0;
+        margin-top: calc((0.72 - 1) * 0.5em);
+        /* Подбираем коэффициент */
+    }
+
+    /* Обрезка снизу (если нужно) */
+    h2:after,
+    .h2::after {
+        content: '';
+        display: block;
+        height: 0;
+        margin-bottom: calc((0.72 - 1) * 0.5em);
+    }
 }
 
 @media (max-width: 575px) {
 
     h2,
     .h2 {
+        font-size: 32px;
         margin-bottom: 30px;
+    }
+
+    h3,
+    .h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    h2,
+    .h2 {
+        font-size: 26px;
+    }
+
+    h3,
+    .h3 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+
+/* Тексты */
+.align-center {
+    width: 100%;
+    text-align: center;
+}
+
+.fz-xl,
+.fz-l,
+.fz-m-plus {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.fz-m {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.fz-s {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+@media (max-width: 1581px) {
+
+    .fz-xl,
+    .fz-l,
+    .fz-m-plus {
+        font-size: 20px;
+    }
+
+    .fz-m {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .fz-xl {
+        font-size: 18px;
+    }
+
+    .fz-l {
+        font-size: 16px;
+    }
+
+    .fz-m-plus {
+        font-size: 15px;
+    }
+
+    .fz-m {
+        font-size: 16px;
+    }
+
+    .fz-s {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 769px) {
+    .fz-xl {
+        font-size: 20px;
+    }
+
+    .fz-l,
+    .fz-m-plus {
+        font-size: 18px;
+    }
+
+    .fz-m {
+        font-size: 18px;
+    }
+
+    .fz-s {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    .fz-xl {
+        font-size: 17px;
+    }
+
+    .fz-l {
+        font-size: 15px;
+    }
+
+    .fz-m-plus {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .fz-m {
+        font-size: 15px;
+    }
+
+    .fz-s {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: var(--letter-spacing);
     }
 }
 
@@ -70,16 +298,27 @@ section {
 /* Рамки */
 .border-small {
     border: 1px solid var(--color-border);
+    overflow: hidden;
 }
 
 .border-medium {
     border: 2px solid var(--color-border);
-    border-radius: var(--radius-medium);
+    overflow: hidden;
 }
 
 .border-large {
     border: 4px solid var(--color-border);
-    border-radius: var(--radius-large);
+    overflow: hidden;
+}
+
+.border-radius-medium {
+    border-radius: var(--radius-m);
+    overflow: hidden;
+}
+
+.border-radius-large {
+    border-radius: var(--radius-l);
+    overflow: hidden;
 }
 
 
@@ -191,4 +430,76 @@ section {
     .d-md-flex {
         display: flex !important;
     }
+}
+
+
+/* Навигация слайдера */
+.swiper-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 26px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: static;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-green);
+    cursor: pointer;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: 23px;
+    color: var(--color-darkGreen);
+}
+
+.swiper-button-prev {}
+
+.swiper-button-next {}
+
+@media (max-width: 991px) {
+    .swiper-nav {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 769px) {
+    .swiper-nav {
+        gap: 40px;
+    }
+
+    .swiper-nav {
+        width: 100%;
+    }
+}
+
+
+/* Растяжение элементов на одну высоту */
+.align-stretch .swiper-wrapper {
+    align-items: stretch;
+}
+
+.align-stretch .swiper-slide {
+    height: auto;
+}
+
+.align-stretch .swiper-slide>* {
+    height: 100%;
+}
+
+.align-stretch .swiper-slide>*>[class*="inner"] {
+    height: 100%;
 }

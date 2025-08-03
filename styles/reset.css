@@ -41,26 +41,21 @@ h3,
 .h2,
 .h3 {
     font-family: "MontserratAlternates";
+    font-weight: 800;
 }
 
 h1,
 .h1 {
-    font-size: 64px;
-    font-weight: 800;
     line-height: 1;
 }
 
 h2,
 .h2 {
-    font-size: 64px;
-    font-weight: 800;
     line-height: 46.1px;
 }
 
-h3,
-.h3 {
-    font-weight: 800;
-    line-height: 35px;
+h3, .h3 {
+    font-weight: 600;
 }
 
 a {
