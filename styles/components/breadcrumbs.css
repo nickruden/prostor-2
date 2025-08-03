@@ -1,0 +1,102 @@
+.breadcrumbs .my-container {
+    padding-top: 20px;
+    padding-bottom: 45px;
+}
+
+.breadcrumbs__path {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 13px 0px;
+}
+
+.breadcrumbs__path-item {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.breadcrumbs__path-item:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    margin-left: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.57169 5.07225L0.346183 0.991167C0.156863 0.808319 0.154972 0.505536 0.341991 0.320336C0.522199 0.141882 0.811603 0.138943 0.995397 0.313701L6 5.07225L0.994565 9.69603C0.810467 9.86609 0.525168 9.86126 0.346934 9.68507C0.157607 9.49791 0.161963 9.19084 0.356523 9.00912L4.57169 5.07225Z' fill='%231F4719'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+.breadcrumbs__path-item:last-child {
+    font-weight: 800;
+    letter-spacing: var(--letter-spacing);
+    color: var(--color-darkGreen);
+}
+
+@media (max-width: 1581px) {}
+
+@media (max-width: 1320px) {
+    .breadcrumbs .my-container {
+        padding-top: 17px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs .my-container {
+        padding-top: 15px;
+        padding-bottom: 34px;
+    }
+
+    .breadcrumbs__path {
+        gap: 14px;
+        padding: 10px 0px;
+    }
+
+    .breadcrumbs__path-item {
+        font-size: 14px;
+    }
+
+    .breadcrumbs__path-item:not(:last-child)::after {
+        width: 6px;
+        height: 8px;
+        margin-left: 14px;
+    }
+}
+
+@media (max-width: 769px) {}
+
+@media (max-width: 575px) {
+    .breadcrumbs .my-container {
+        padding-top: 12px;
+        padding-bottom: 30px;
+    }
+
+    .breadcrumbs__path {
+        gap: 12px;
+        padding: 0px;
+    }
+
+    .breadcrumbs__path-item {
+        font-size: 12px;
+    }
+
+    .breadcrumbs__path-item:not(:last-child)::after {
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .breadcrumbs__path {
+        gap: 10px;
+    }
+
+    .breadcrumbs__path-item {
+        font-size: 10px;
+        line-height: 0px;
+    }
+
+    .breadcrumbs__path-item:not(:last-child)::after {
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,155 @@
+.our-contacts {
+    padding-top: 0;
+}
+
+.our-contacts .my-container {
+    gap: 20px;
+}
+
+.our-contacts__description {
+    gap: 74px;
+    width: 27%;
+}
+
+.our-contacts__description h1 {
+    margin-bottom: 0;
+    line-height: 100%;
+}
+
+.our-contacts__body {}
+
+.our-contacts__items {
+    gap: 38px;
+}
+
+.our-contacts__item {
+    gap: 10px;
+}
+
+.our-contacts__item .desctop-menu__cmd {
+    margin-top: 6px;
+}
+
+.our-contacts__item-title {
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.our-contacts__item-contact {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: var(--letter-spacing);
+    max-width: 282px;
+}
+
+.our-contacts__map-wrap {
+    width: 69%;
+}
+
+.our-contacts__map-wrap>* {
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 1581px) {
+    .our-contacts__description {
+        width: auto;
+    }
+
+    .our-contacts__map-wrap {
+        width: 69%;
+    }
+}
+
+@media (max-width: 1320px) {
+    .our-contacts__map-wrap {
+        width: 80%;
+    }
+
+    .our-contacts__description {
+        gap: 60px;
+    }
+
+    .our-contacts__item-contact {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .our-contacts__item-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 769px) {
+    .our-contacts .my-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .our-contacts__description {
+        gap: 50px;
+    }
+
+    .our-contacts__items {
+        gap: 45px;
+    }
+
+    .our-contacts__item {
+        gap: 12px;
+    }
+
+    .our-contacts__item-title {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .our-contacts__item-contact {
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .our-contacts__map-wrap {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (max-width: 575px) {
+    .our-contacts .my-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .our-contacts__description {
+        gap: 45px;
+    }
+
+    .our-contacts__items {
+        gap: 40px;
+    }
+
+    .our-contacts__item {
+        gap: 15px;
+    }
+
+    .our-contacts__item-contact {
+        font-size: 14px;
+    }
+
+    .our-contacts__item-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .our-contacts .my-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .our-contacts__description {
+        gap: 40px;
+    }
+}

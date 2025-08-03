@@ -238,6 +238,7 @@
 
     .catalog-card__title {
         margin-bottom: 20px;
+        padding-right: 22px;
     }
 
     .catalog-card__old-price {
