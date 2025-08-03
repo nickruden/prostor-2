@@ -406,87 +406,61 @@
             },
         });
 
-        let swiperInstance = null;
+        function groupSlidesForMobile() {
+            if (window.innerWidth > 768) return; // Только для мобильных
 
-        function initSwiper() {
-            if (swiperInstance) {
-                swiperInstance.destroy(true, true);
-                swiperInstance = null;
-            }
-
-            const isMobile = window.innerWidth <= 768;
             const wrapper = document.querySelector('.catalog__slider .swiper-wrapper');
+            const slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
 
-            if (isMobile) {
-                const slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
-                const groupedSlides = [];
+            if (slides.length === 0 || slides[0].querySelector('.catalog-card') === null) return;
 
-                for (let i = 0; i < slides.length; i += 3) {
-                    const newSlide = document.createElement('div');
-                    newSlide.classList.add('swiper-slide');
-                    newSlide.style.display = 'flex';
-                    newSlide.style.flexDirection = 'column';
-                    newSlide.style.gap = '20px';
+            const groupedSlides = [];
 
-                    for (let j = i; j < i + 3 && j < slides.length; j++) {
-                        const card = slides[j].querySelector('.catalog-card');
-                        if (card) {
-                            newSlide.appendChild(card.cloneNode(true));
-                        }
-                    }
+            for (let i = 0; i < slides.length; i += 3) {
+                const newSlide = document.createElement('div');
+                newSlide.classList.add('swiper-slide');
+                newSlide.style.display = 'flex';
+                newSlide.style.flexDirection = 'column';
+                newSlide.style.gap = '20px';
 
-                    groupedSlides.push(newSlide);
+                for (let j = i; j < i + 3 && j < slides.length; j++) {
+                    newSlide.appendChild(slides[j].firstElementChild);
                 }
 
-                wrapper.innerHTML = '';
-                groupedSlides.forEach(slide => wrapper.appendChild(slide));
-            } else {
-                const cards = wrapper.querySelectorAll('.catalog-card');
-                wrapper.innerHTML = '';
-
-                cards.forEach(card => {
-                    const slide = document.createElement('div');
-                    slide.classList.add('swiper-slide');
-                    slide.appendChild(card);
-                    wrapper.appendChild(slide);
-                });
+                groupedSlides.push(newSlide);
             }
 
-            swiperInstance = new Swiper(".catalog__slider .swiper", {
-                spaceBetween: 20,
-                slidesPerView: 1,
-                navigation: {
-                    nextEl: ".catalog__swiper-nav .swiper-button-next",
-                    prevEl: ".catalog__swiper-nav .swiper-button-prev",
-                },
-                breakpoints: {
-                    769: {
-                        slidesPerView: 2,
-                    },
-                    992: {
-                        slidesPerView: 3,
-                    },
-                    1320: {
-                        slidesPerView: 4,
-                    },
-                    1581: {
-                        slidesPerView: 5,
-                    },
-                },
-            });
+            wrapper.innerHTML = ''; // Очищаем
+            groupedSlides.forEach(slide => wrapper.appendChild(slide));
         }
 
-        let resizeTimeout;
-        function handleResize() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                initSwiper();
-            }, 200);
-        }
+        const swiper2 = new Swiper(".catalog__slider .swiper", {
+            spaceBetween: 20,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: ".catalog__swiper-nav .swiper-button-next",
+                prevEl: ".catalog__swiper-nav .swiper-button-prev",
+            },
+            breakpoints: {
+                769: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1320: {
+                    slidesPerView: 4,
+                },
+                1581: {
+                    slidesPerView: 5,
+                },
+            },
+        });
 
-        document.addEventListener('DOMContentLoaded', initSwiper);
-        window.addEventListener('resize', handleResize);
-
+        window.addEventListener('load', () => {
+            groupSlidesForMobile();
+            initSwiper();
+        });
     </script>
 </body>
 
