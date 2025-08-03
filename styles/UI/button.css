@@ -84,7 +84,6 @@
 }
 
 @media (max-width: 991px) {
-
     .my-button.--size-m,
     .my-button.--bordered.--size-m,
     .my-button.--bordered-darkBlue.--size-m {
@@ -104,6 +103,10 @@
     .my-button.--theme-white:not(class*=[bordered]) {
         border: 2px solid var(--color-green);
         padding: 13px 0px;
+    }
+
+    .my-button.--mobile-border {
+        border: 2px solid var(--color-green);
     }
 }
 

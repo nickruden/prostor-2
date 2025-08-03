@@ -22,6 +22,7 @@
 }
 
 .catalog__buttons .swiper-slide .my-button {
+    font-weight: 400;
     width: auto;
     padding-left: 38px;
     padding-right: 38px;
@@ -148,8 +149,7 @@
     font-weight: 400;
 }
 
-@media (max-width: 1581px) {
-}
+@media (max-width: 1581px) {}
 
 @media (max-width: 1320px) {
     .catalog header {
@@ -165,6 +165,10 @@
 @media (max-width: 991px) {
     .catalog-card__price {
         gap: 7px;
+    }
+
+    .catalog__content {
+        gap: 35px;
     }
 }
 
@@ -238,5 +242,11 @@
 
     .catalog-card__old-price {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .catalog__content {
+        gap: 20px;
     }
 }

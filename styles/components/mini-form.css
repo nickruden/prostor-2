@@ -17,6 +17,7 @@
     line-height: 56px;
     letter-spacing: var(--letter-spacing);
     max-width: 575px;
+    margin-bottom: 0;
 }
 
 .mini-form__form {
@@ -36,6 +37,7 @@
 
 .mini-form__agree-text {
     font-size: 14px;
+    line-height: 18px;
     letter-spacing: var(--letter-spacing);
     align-self: flex-end;
 }
@@ -93,6 +95,7 @@
     }
 
     .mini-form__agree-text {
+        width: 100%;
         text-align: center;
     }
 }
