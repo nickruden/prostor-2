@@ -9,6 +9,8 @@
 
     <!-- БИБЛИОТЕКИ -->
     <link rel="stylesheet" href="../assets/libs/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/libs/fancybox/fancybox.css">
+
 
     <!-- ОБЩИЕ СТИЛИ -->
     <link rel="stylesheet" href="../styles/reset.css">
@@ -121,7 +123,7 @@
         <section class="breadcrumbs">
             <div class="my-container">
                 <div class="breadcrumbs__path">
-                    <a href="./index.html" class="breadcrumbs__path-item">Главная</a>
+                    <a href="../index.html" class="breadcrumbs__path-item">Главная</a>
                     <a href="./catalog.html" class="breadcrumbs__path-item">Каталог</a>
                     <a href="./product.html" class="breadcrumbs__path-item">Топиарий ландшафтный</a>
                 </div>
@@ -202,7 +204,7 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <button class="catalog-card__button"></button>
+                                                    <a href="./product.html" class="catalog-card__button"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -222,7 +224,7 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <button class="catalog-card__button"></button>
+                                                    <a href="./product.html" class="catalog-card__button"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -242,7 +244,7 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <button class="catalog-card__button"></button>
+                                                    <a href="./product.html" class="catalog-card__button"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -262,7 +264,7 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <button class="catalog-card__button"></button>
+                                                    <a href="./product.html" class="catalog-card__button"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -282,7 +284,7 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <button class="catalog-card__button"></button>
+                                                    <a href="./product.html" class="catalog-card__button"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -392,6 +394,7 @@
 
     <!-- БИБЛИОТЕКИ -->
     <script src="../assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/libs/fancybox/fancybox.umd.js"></script>
 
 
     <!-- ОБЩИЕ СКРИПТЫ -->
@@ -469,7 +472,6 @@
 
         window.addEventListener('load', () => {
             groupSlidesForMobile();
-            initSwiper();
         });
     </script>
 
@@ -489,52 +491,81 @@
         ];
 
         function initGallery() {
-            const mainSlides = imageUrls.map(url =>
-                `<div class="swiper-slide product-galery__main-slide border-radius-medium">
-                    <img src="${url}" alt="Gallery image" loading="lazy">
-                </div>`
-            ).join('');
+            // Создаем слайды
+            const mainSlides = imageUrls.map((url, index) => `
+            <div class="swiper-slide product-galery__main-slide border-radius-medium">
+                <a href="${url}" data-fancybox="gallery" data-caption="Image ${index + 1}" data-index="${index}">
+                    <img src="${url}" alt="Gallery image ${index + 1}" loading="lazy">
+                </a>
+            </div>
+        `).join('');
 
-            const thumbSlides = imageUrls.map(url =>
-                `<div class="swiper-slide product-galery__thumb-slide border-radius-medium">
-                    <img src="${url}" alt="Thumbnail" loading="lazy">
-                </div>`
-            ).join('');
+            const thumbSlides = imageUrls.map((url, index) => `
+            <div class="swiper-slide product-galery__thumb-slide border-radius-medium">
+                <img src="${url}" alt="Thumbnail ${index + 1}" loading="lazy" data-index="${index}">
+            </div>
+        `).join('');
 
+            // Вставляем слайды
             document.querySelector('.product-galery__main-swiper .swiper-wrapper').innerHTML = mainSlides;
             document.querySelector('.product-galery__thumb-swiper .swiper-wrapper').innerHTML = thumbSlides;
 
+            // Инициализация слайдеров
             const thumbSwiper = new Swiper(".product-galery__thumb-swiper", {
                 spaceBetween: 6,
                 slidesPerView: 3,
                 freeMode: true,
                 watchSlidesProgress: true,
                 breakpoints: {
-                    575: {
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        spaceBetween: 15,
-                    },
-                    992: {
-                        spaceBetween: 20,
-                    },
+                    575: { spaceBetween: 10 },
+                    768: { spaceBetween: 15 },
+                    992: { spaceBetween: 20 },
                 },
             });
 
-            new Swiper(".product-galery__main-swiper", {
+            const mainSwiper = new Swiper(".product-galery__main-swiper", {
                 spaceBetween: 10,
-                thumbs: {
-                    swiper: thumbSwiper,
-                },
+                loop: true,
+                thumbs: { swiper: thumbSwiper },
                 breakpoints: {
-                    768: {
-                        spaceBetween: 20,
-                    },
-                    992: {
-                        spaceBetween: 24,
-                    },
+                    768: { spaceBetween: 20 },
+                    992: { spaceBetween: 24 },
                 },
+            });
+
+            // Переменная для хранения текущего индекса
+            let currentSlideIndex = 0;
+
+            // Инициализация Fancybox
+            Fancybox.bind("[data-fancybox='gallery']", {
+                on: {
+                    reveal: (fancybox, slide) => {
+                        currentSlideIndex = parseInt(slide.$trigger.getAttribute('data-index'));
+                        mainSwiper.slideTo(currentSlideIndex);
+                        thumbSwiper.slideTo(currentSlideIndex);
+                    },
+                    "Carousel.change": (fancybox, carousel, slide) => {
+                        currentSlideIndex = slide.index;
+                        mainSwiper.slideTo(currentSlideIndex);
+                        thumbSwiper.slideTo(currentSlideIndex);
+                    },
+                    close: () => {
+                        // После закрытия обновляем слайдеры
+                        mainSwiper.slideTo(currentSlideIndex);
+                        thumbSwiper.slideTo(currentSlideIndex);
+                    }
+                }
+            });
+
+            // Обработчик клика по миниатюрам
+            document.querySelectorAll('.product-galery__thumb-slide').forEach((thumb, index) => {
+                thumb.addEventListener('click', () => {
+                    currentSlideIndex = index;
+                    Fancybox.show(
+                        imageUrls.map(url => ({ src: url })),
+                        { startIndex: index }
+                    );
+                });
             });
         }
 
