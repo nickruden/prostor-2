@@ -502,6 +502,13 @@ footer {
 
 
 /* Навигация слайдера */
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .swiper-nav {
     display: flex;
     justify-content: flex-end;
@@ -597,252 +604,26 @@ footer {
     height: 100%;
 }
 
+@media (min-width: 769px) {
+    .aligh-stretch-md .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .aligh-stretch-md .swiper-slide {
+        height: auto;
+    }
+
+    .aligh-stretch-md .swiper-slide>* {
+        height: 100%;
+    }
+
+    .aligh-stretch-md .swiper-slide>*>[class*="inner"] {
+        height: 100%;
+    }
+}
+
 
 /* Социальные сети */
-.footer {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    padding-bottom: 80px;
-    position: relative;
-}
-
-.footer::before {
-    content: '';
-    background-image: url('../../assets/images/components/footer/bg-img.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    width: 100%;
-    height: 288px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    /* Убедимся, что изображение под контентом */
-}
-
-@media (min-width: 1920px) {
-    .footer::before {
-        background-size: contain;
-        background-repeat: repeat;
-    }
-}
-
-.footer__mini-form {
-    padding: 80px 0px;
-}
-
-.footer__mini-form .my-container {
-    gap: 30px;
-}
-
-@media (min-width: 700px) {
-    .footer__mini-form .my-container {
-        align-items: center;
-    }
-}
-
-.footer__mini-form-texts {
-    align-items: flex-start;
-    gap: 30px;
-}
-
-.footer__mini-form-title {
-    font-weight: 800;
-    line-height: 60px;
-    text-align: start;
-    margin-bottom: 0;
-}
-
-.footer__mini-form-text {
-    font-size: 26px;
-
-}
-
-@media (min-width: 575px) {
-    .footer__mini-form-text span {
-        font-weight: 800;
-    }
-}
-
-.footer-form {
-    gap: 24px;
-}
-
-.footer-form__fields {
-    gap: 10px;
-    background-color: var(--color-white);
-    padding: 9px 10px;
-}
-
-.footer-form__fields input {
-    width: 289px;
-}
-
-@media (min-width: 700px) {
-    .footer-form__fields .my-input {
-        padding: 12px 30px;
-    }
-}
-
-.footer-form__agree-text {}
-
-.footer-form__agree-text {
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: var(--letter-spacing);
-    align-self: flex-end;
-}
-
-.footer-form__agree-text a {
-    text-decoration: underline;
-}
-
-.footer-form__agree-text a:hover {
-    color: #d7d7d7;
-}
-
-@media (max-width: 1581px) {
-    .footer__mini-form {
-        padding: 70px 0px;
-    }
-
-    .footer__mini-form-texts {
-        gap: 25px;
-    }
-
-    .footer__mini-form-title {
-        font-size: 50px;
-    }
-
-    .footer__mini-form-text {
-        font-size: 22px;
-    }
-
-    .footer-form__fields input {
-        width: auto;
-    }
-}
-
-@media (max-width: 1320px) {
-    .footer__mini-form {
-        padding: 60px 0px;
-    }
-
-    .footer__mini-form-title {
-        font-size: 40px;
-        line-height: 1.2;
-    }
-
-    .footer__mini-form-text {
-        font-size: 20px;
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 991px) {
-    .footer__mini-form {
-        padding: 50px 0px;
-    }
-
-    .footer__mini-form-texts {
-        gap: 23px;
-    }
-
-    .footer__mini-form-text {
-        font-size: 17px;
-    }
-
-    .footer-form__fields {
-        gap: 10px;
-        flex-direction: column;
-        background-color: transparent;
-        padding: 0px;
-    }
-
-    .footer-form__fields .my-button {
-        width: 100%;
-    }
-
-    .footer-form__agree-text {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 700px) {
-    .footer__mini-form .my-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .footer-form {
-        width: 100%;
-        gap: 22px;
-    }
-
-    .footer__mini-form-text {
-        font-size: 15px;
-        font-weight: 500;
-        width: 320px;
-    }
-
-    .footer__mini-form-text span {
-        font-weight: 500;
-    }
-
-    .footer-form__agree-text {
-        line-height: 1;
-    }
-}
-
-@media (max-width: 575px) {
-    .footer__mini-form {
-        padding: 35px 0px;
-    }
-
-    .footer__mini-form .my-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer__mini-form-texts {
-        gap: 20px;
-    }
-
-    .footer__mini-form-text {
-        font-size: 13px;
-        max-width: 230px;
-    }
-
-    .footer__mini-form-title {
-        font-size: 30px;
-        line-height: 1;
-    }
-}
-
-@media (max-width: 420px) {
-    .footer__mini-form {
-        padding: 30px 0px;
-    }
-
-    .footer-form {
-        gap: 20px;
-    }
-
-    .footer__mini-form-title {
-        font-size: 26px;
-    }
-
-    .footer__mini-form-text {
-        font-size: 14px;
-        max-width: 230px;
-    }
-}
-
-
-/* Главная часть */
 .desctop-menu__cmd {
     gap: 30px;
 }
