@@ -254,6 +254,7 @@
     .hero-section__inner {
         padding: 40px 45px 45px;
         min-height: 520px;
+        margin-bottom: 20px;
     }
 
     .hero-section__pre-title {
@@ -277,6 +278,7 @@
     .hero-section__inner {
         padding: 50px 35px 45px;
         min-height: 431px;
+        margin-bottom: 15px;
     }
 
     .hero-section__decor-items {
@@ -386,6 +388,7 @@
         padding: 34px 20px 63px;
         min-height: 407px;
         background-position-x: -305px;
+        margin-bottom: 10px;
     }
 
     .hero-section__header {
@@ -928,16 +931,16 @@
     .docs__swiper .swiper-slide {
         padding: 20px;
     }
+}
+
+@media (max-width: 575px) {
+    .docs__container {
+        gap: 30px;
     }
 
-    @media (max-width: 575px) {
-        .docs__container {
-            gap: 30px;
-        }
-
-        .docs__swiper .swiper-slide {
-            padding: 18px;
-        }
+    .docs__swiper .swiper-slide {
+        padding: 18px;
     }
+}
 
-    @media (max-width: 420px) {}
+@media (max-width: 420px) {}
