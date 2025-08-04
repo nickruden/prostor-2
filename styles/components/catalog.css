@@ -149,6 +149,14 @@
     position: relative;
 }
 
+.catalog-card__button:hover {
+    background-color: #C8C8C8;
+}
+
+.catalog-card__button:active {
+    background-color: var(--color-green);
+}
+
 .catalog-card__button::after {
     content: '';
     display: block;

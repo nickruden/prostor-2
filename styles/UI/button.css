@@ -16,6 +16,14 @@
     align-items: center;
 }
 
+.my-button:hover {
+    background-color: #A7CB5A;
+}
+
+.my-button:active {
+    background-color: #7DAC18;
+}
+
 .my-button.--size-m {
     padding: 15px 0px;
     font-size: 20px;
@@ -35,9 +43,29 @@
     background-color: var(--color-white);
 }
 
+.my-button.--theme-white:hover {
+    background-color: #E0E0E0;
+}
+
+.my-button.--theme-white:active {
+    background-color: var(--color-white);
+}
+
 .my-button.--bordered {
     color: var(--color-darkGreen);
     border: 2px solid var(--color-darkGreen);
+}
+
+.my-button.--bordered:hover {
+    background-color: #E0E0E0;
+    border-color: #2E6C25;
+    color: #2E6C25;
+}
+
+.my-button.--bordered:active {
+    color: #2E6A25;
+    border-color: #2E6A25;
+    background-color: var(--color-white);
 }
 
 .my-button.--bordered--lightGren {
@@ -46,9 +74,26 @@
     border: 2px solid var(--color-green);
 }
 
+.my-button.--bordered--lightGren:hover,
+.my-button.--bordered--lightGren.active {
+    background-color: #E1FFA1;
+}
+
+.my-button.--bordered--lightGren:active {
+    background-color: var(--color-green);
+}
+
 .my-button.--bordered-darkBlue {
     color: var(--dark-blue);
     border: 2px solid var(--dark-blue);
+}
+
+.my-button.--bordered-darkBlue:hover {
+    background-color: #E0E0E0;
+}
+
+.my-button.--bordered-darkBlue:active {
+    background-color: var(--color-white);
 }
 
 .my-button.--bordered.--size-m,
@@ -84,6 +129,7 @@
 }
 
 @media (max-width: 991px) {
+
     .my-button.--size-m,
     .my-button.--bordered.--size-m,
     .my-button.--bordered-darkBlue.--size-m {
