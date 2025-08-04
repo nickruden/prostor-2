@@ -792,3 +792,152 @@
         gap: 10px;
     }
 }
+
+
+/* ТУТ ЕЩЁ БЛОКИ */
+
+
+/* Наши партнёры */
+.partners {}
+
+.partners__container {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.partners__title {
+    margin-bottom: 0;
+}
+
+.partners__swiper {}
+
+.partners__swiper .swiper-wrapper {}
+
+.partners__swiper .swiper-slide {
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 992px) {
+    .partners__swiper .swiper-slide {
+        width: auto !important;
+    }
+}
+
+.partners__logo {
+    height: 100%;
+}
+
+.partners__swiper-nav {}
+
+@media (max-width: 1581px) {}
+
+@media (max-width: 1320px) {
+    .partners__container {
+        gap: 60px;
+    }
+
+    .partners__swiper .swiper-slide {
+        height: 70px;
+    }
+}
+
+@media (max-width: 992px) {
+    .partners__swiper .swiper-slide {
+        height: 100%;
+        max-height: 80px;
+    }
+
+    .partners__swiper .swiper-slide img {
+        height: 100%;
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 769px) {}
+
+@media (max-width: 575px) {
+    .partners__container {
+        gap: 48px;
+    }
+}
+
+@media (max-width: 420px) {
+    .partners__swiper .swiper-slide {
+        height: 56px;
+    }
+
+    .partners__swiper .swiper-slide img {
+        height: 100%;
+        max-height: 56px;
+    }
+}
+
+
+/* Документы */
+.docs {}
+
+.docs__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.docs__title {
+    margin-bottom: 0;
+}
+
+.docs__swiper {}
+
+.docs__swiper .swiper-wrapper {}
+
+.docs__swiper .swiper-slide {
+    padding: 24px;
+}
+
+.docs__logo {}
+
+.docs__swiper-nav {}
+
+@media (max-width: 1581px) {
+    .docs__swiper .swiper-slide {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1320px) {}
+
+@media (max-width: 992px) {
+    .docs__container {
+        gap: 35px;
+    }
+
+    .docs__swiper .swiper-slide {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 769px) {
+    .docs__container {
+        gap: 40px;
+    }
+
+    .docs__swiper .swiper-slide {
+        padding: 20px;
+    }
+    }
+
+    @media (max-width: 575px) {
+        .docs__container {
+            gap: 30px;
+        }
+
+        .docs__swiper .swiper-slide {
+            padding: 18px;
+        }
+    }
+
+    @media (max-width: 420px) {}

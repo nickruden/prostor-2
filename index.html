@@ -9,6 +9,7 @@
 
     <!-- БИБЛИОТЕКИ -->
     <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/libs/fancybox/fancybox.css">
 
     <!-- ОБЩИЕ СТИЛИ -->
     <link rel="stylesheet" href="./styles/reset.css">
@@ -379,13 +380,70 @@
             </div>
         </section>
         <section class="partners">
-            <div class="my-container">
+            <div class="my-container partners__container">
                 <h2 class="partners__title">С кем мы работаем</h2>
                 <div class="swiper partners__swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="" alt="" class="partners__logo"></div>
-                        <div class="swiper-slide"><img src="" alt="" class="partners__logo"></div>
+                        <div class="swiper-slide"><img src="./assets/images/pages/main/partners-logo/image-1.jpg" alt=""
+                                class="partners__logo"></div>
+                        <div class="swiper-slide"><img src="./assets/images/pages/main/partners-logo/image-2.jpg" alt=""
+                                class="partners__logo"></div>
+                        <div class="swiper-slide"><img src="./assets/images/pages/main/partners-logo/image-2.jpg" alt=""
+                                class="partners__logo"></div>
+                        <div class="swiper-slide"><img src="./assets/images/pages/main/partners-logo/image-2.jpg" alt=""
+                                class="partners__logo"></div>
+                        <div class="swiper-slide"><img src="./assets/images/pages/main/partners-logo/image-2.jpg" alt=""
+                                class="partners__logo"></div>
+                        <div class="swiper-slide"><img src="./assets/images/pages/main/partners-logo/image-2.jpg" alt=""
+                                class="partners__logo"></div>
                     </div>
+                </div>
+                <div class="swiper-nav partners__swiper-nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+        <section class="docs">
+            <div class="my-container docs__container">
+                <h2 class="docs__title">Документы</h2>
+                <div class="swiper docs__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide border-medium border-radius-large">
+                            <a href="./assets/images/pages/main/docs/patient-1.jpg" data-fancybox="main-docs">
+                                <img src="./assets/images/pages/main/docs/patient-1.jpg" alt=""
+                                    class="docs__logo border-radius-large">
+                            </a>
+                        </div>
+                        <div class="swiper-slide border-medium border-radius-large">
+                            <a href="./assets/images/pages/main/docs/patient-1.jpg" data-fancybox="main-docs">
+                                <img src="./assets/images/pages/main/docs/patient-1.jpg" alt=""
+                                    class="docs__logo border-radius-large">
+                            </a>
+                        </div>
+                        <div class="swiper-slide border-medium border-radius-large">
+                            <a href="./assets/images/pages/main/docs/patient-1.jpg" data-fancybox="main-docs">
+                                <img src="./assets/images/pages/main/docs/patient-1.jpg" alt=""
+                                    class="docs__logo border-radius-large">
+                            </a>
+                        </div>
+                        <div class="swiper-slide border-medium border-radius-large">
+                            <a href="./assets/images/pages/main/docs/patient-1.jpg" data-fancybox="main-docs">
+                                <img src="./assets/images/pages/main/docs/patient-1.jpg" alt=""
+                                    class="docs__logo border-radius-large">
+                            </a>
+                        </div>
+                        <div class="swiper-slide border-medium border-radius-large">
+                            <a href="./assets/images/pages/main/docs/patient-1.jpg" data-fancybox="main-docs">
+                                <img src="./assets/images/pages/main/docs/patient-1.jpg" alt=""
+                                    class="docs__logo border-radius-large">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-nav docs__swiper-nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </section>
@@ -479,10 +537,12 @@
 
     <!-- БИБЛИОТЕКИ -->
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/fancybox/fancybox.umd.js"></script>
 
 
     <!-- ОБЩИЕ СКРИПТЫ -->
     <script src="./assets/scripts/components/header.js"></script>
+    <script src="./assets/scripts/fancybox-init.js"></script>
 
 
     <script>
@@ -556,6 +616,57 @@
         window.addEventListener('load', () => {
             groupSlidesForMobile();
             initSwiper();
+        });
+
+        const swiper3 = new Swiper(".partners__swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            freeMode: false,
+            navigation: {
+                nextEl: ".partners .swiper-button-next",
+                prevEl: ".partners .swiper-button-prev",
+            },
+            breakpoints: {
+                575: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    freeMode: false,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                    freeMode: false,
+                },
+                1320: {
+                    freeMode: true,
+                    slidesPerView: "auto",
+                    spaceBetween: 100,
+                },
+            },
+        });
+
+        const swiper4 = new Swiper(".docs__swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".docs .swiper-button-next",
+                prevEl: ".docs .swiper-button-prev",
+            },
+            breakpoints: {
+                575: {
+                    slidesPerView: 2,
+                    freeMode: false,
+                    spaceBetween: 18,
+                },
+                992: {
+                    slidesPerView: 3,
+                    freeMode: false,
+                },
+                1320: {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                },
+            },
         });
     </script>
 </body>
