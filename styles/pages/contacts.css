@@ -57,13 +57,13 @@
     }
 
     .our-contacts__map-wrap {
-        width: 69%;
+        width: 65%;
     }
 }
 
 @media (max-width: 1320px) {
     .our-contacts__map-wrap {
-        width: 80%;
+        width: 60%;
     }
 
     .our-contacts__description {
