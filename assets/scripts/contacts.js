@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Координаты всех адресов
+  // Координаты адресов
   const addresses = [
-    { name: "ул. Алмазная, 5 (м-н Первомайский)", coords: [52.260190, 104.234981] },
+    { name: "ул. Самойловой, 5П", coords: [59.90177, 30.37451] },
   ];
 
   const mapContainer = document.querySelector(".our-contacts__map-wrap");
@@ -11,29 +11,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function init() {
     const map = new ymaps.Map("yandex-map", {
-      center: [52.276655, 104.285330],
-      zoom: 25,
+      center: addresses[0].coords,
+      zoom: 16,
       controls: ["zoomControl"],
     });
 
-    // Добавляем метки для каждого адреса
+    // Добавляем метки
     addresses.forEach((addr) => {
       const placemark = new ymaps.Placemark(
         addr.coords,
+        { balloonContent: addr.name },
         {
-          balloonContent: addr.name,
-        },
-        {
-          preset: "islands#redDotIcon",
+          preset: "islands#redPocketIcon",
+          iconColor: "red",
         }
       );
-
       map.geoObjects.add(placemark);
     });
 
-    // Убедимся, что все метки видны на карте
-    map.setBounds(map.geoObjects.getBounds(), {
-      checkZoomRange: true,
-    });
+    if (addresses.length > 1) {
+      map.setBounds(map.geoObjects.getBounds(), {
+        checkZoomRange: true,
+      });
+    }
   }
 });
