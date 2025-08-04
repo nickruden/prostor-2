@@ -494,7 +494,7 @@
             // Создаем слайды
             const mainSlides = imageUrls.map((url, index) => `
             <div class="swiper-slide product-galery__main-slide border-radius-medium">
-                <a href="${url}" data-fancybox="gallery" data-caption="Image ${index + 1}" data-index="${index}">
+                <a href="${url}" data-fancybox="gallery" data-caption="Image ${index + 1}">
                     <img src="${url}" alt="Gallery image ${index + 1}" loading="lazy">
                 </a>
             </div>
@@ -502,7 +502,7 @@
 
             const thumbSlides = imageUrls.map((url, index) => `
             <div class="swiper-slide product-galery__thumb-slide border-radius-medium">
-                <img src="${url}" alt="Thumbnail ${index + 1}" loading="lazy" data-index="${index}">
+                <img src="${url}" alt="Thumbnail ${index + 1}" loading="lazy">
             </div>
         `).join('');
 
@@ -510,7 +510,9 @@
             document.querySelector('.product-galery__main-swiper .swiper-wrapper').innerHTML = mainSlides;
             document.querySelector('.product-galery__thumb-swiper .swiper-wrapper').innerHTML = thumbSlides;
 
-            // Инициализация слайдеров
+
+            // ВСЁ ЧТО НИЖЕ ЭТО ВАЖНО СОХРАНИТЬ ДЛЯ РАБОСПОСОБНОСТИ (ДАЖЕ ЕСЛИ ВЫ УБЕРЁТЕ ВЕРХНИЙ КОД И ВСТАВИТЕ НАПРЯМУЮ В ВЁРСТКУ ШАБЛОН)
+            // Инициализация слайдера миниатюр
             const thumbSwiper = new Swiper(".product-galery__thumb-swiper", {
                 spaceBetween: 6,
                 slidesPerView: 3,
@@ -523,6 +525,7 @@
                 },
             });
 
+            // Инициализация основного слайдера
             const mainSwiper = new Swiper(".product-galery__main-swiper", {
                 spaceBetween: 10,
                 loop: true,
@@ -533,39 +536,23 @@
                 },
             });
 
-            // Переменная для хранения текущего индекса
-            let currentSlideIndex = 0;
+            document.querySelectorAll('.product-galery__thumb-slide').forEach((thumb, index) => {
+                thumb.addEventListener('click', () => {
+                    mainSwiper.slideTo(index);
+                });
+            });
 
-            // Инициализация Fancybox
             Fancybox.bind("[data-fancybox='gallery']", {
                 on: {
                     reveal: (fancybox, slide) => {
-                        currentSlideIndex = parseInt(slide.$trigger.getAttribute('data-index'));
-                        mainSwiper.slideTo(currentSlideIndex);
-                        thumbSwiper.slideTo(currentSlideIndex);
-                    },
-                    "Carousel.change": (fancybox, carousel, slide) => {
-                        currentSlideIndex = slide.index;
-                        mainSwiper.slideTo(currentSlideIndex);
-                        thumbSwiper.slideTo(currentSlideIndex);
+                        const slideIndex = mainSwiper.activeIndex;
+                        thumbSwiper.slideTo(slideIndex);
                     },
                     close: () => {
-                        // После закрытия обновляем слайдеры
-                        mainSwiper.slideTo(currentSlideIndex);
-                        thumbSwiper.slideTo(currentSlideIndex);
+                        const slideIndex = mainSwiper.activeIndex;
+                        thumbSwiper.slideTo(slideIndex);
                     }
                 }
-            });
-
-            // Обработчик клика по миниатюрам
-            document.querySelectorAll('.product-galery__thumb-slide').forEach((thumb, index) => {
-                thumb.addEventListener('click', () => {
-                    currentSlideIndex = index;
-                    Fancybox.show(
-                        imageUrls.map(url => ({ src: url })),
-                        { startIndex: index }
-                    );
-                });
             });
         }
 
