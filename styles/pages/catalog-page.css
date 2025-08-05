@@ -2,6 +2,10 @@
     padding-top: 0;
 }
 
+.catalog header h1 {
+    margin-bottom: 0;
+}
+
 .catalog__content {
     display: flex;
     flex-direction: column;
