@@ -419,37 +419,13 @@
             },
         });
 
-        function groupSlidesForMobile() {
-            if (window.innerWidth > 768) return;
-
-            const wrapper = document.querySelector('.catalog__slider .swiper-wrapper');
-            const slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
-
-            if (slides.length === 0 || slides[0].querySelector('.catalog-card') === null) return;
-
-            const groupedSlides = [];
-
-            for (let i = 0; i < slides.length; i += 2) {
-                const newSlide = document.createElement('div');
-                newSlide.classList.add('swiper-slide');
-                newSlide.style.display = 'flex';
-                newSlide.style.flexDirection = 'column';
-                newSlide.style.gap = '20px';
-
-                for (let j = i; j < i + 2 && j < slides.length; j++) {
-                    newSlide.appendChild(slides[j].firstElementChild);
-                }
-
-                groupedSlides.push(newSlide);
-            }
-
-            wrapper.innerHTML = ''; // Очищаем
-            groupedSlides.forEach(slide => wrapper.appendChild(slide));
-        }
-
         const swiper2 = new Swiper(".catalog__slider .swiper", {
             spaceBetween: 20,
             slidesPerView: 1,
+            grid: {
+                rows: 2,
+                fill: 'row',
+            },
             navigation: {
                 nextEl: ".catalog__swiper-nav .swiper-button-next",
                 prevEl: ".catalog__swiper-nav .swiper-button-prev",
@@ -457,6 +433,10 @@
             breakpoints: {
                 769: {
                     slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    grid: {
+                        rows: 1,
+                    }
                 },
                 992: {
                     slidesPerView: 3,
@@ -468,10 +448,6 @@
                     slidesPerView: 5,
                 },
             },
-        });
-
-        window.addEventListener('load', () => {
-            groupSlidesForMobile();
         });
     </script>
 

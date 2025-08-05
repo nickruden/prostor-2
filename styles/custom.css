@@ -608,7 +608,7 @@ footer {
 }
 
 .align-stretch .swiper-slide {
-    height: auto;
+    height: auto !important;
 }
 
 .align-stretch .swiper-slide>* {
