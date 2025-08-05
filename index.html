@@ -171,7 +171,7 @@
         </section>
         <section class="advantages">
             <div class="my-container">
-                <h2 class="advantages__title align-center">Преимущества</h2>
+                <h2 class="advantages__title texts-center">Преимущества</h2>
                 <div class="flex flex-column advantages__body">
                     <div class="advantages__image-wrap border-radius-medium">
                         <img src="./assets/images/pages/main/advantages/big-img.jpg" alt="">
@@ -379,6 +379,57 @@
                 </div>
             </div>
         </section>
+        <section class="what-make with-bg-img no-md-bg">
+            <div class="flex flex-column items-center my-container">
+                <h2 class="what-make__title">Что мы делаем</h2>
+                <div class="what-make__content">
+                    <div class="what-make__service service-izgorodi">
+                        <div class="what-make__service-text-item border-radius-medium border-large">
+                            <h3>Изгороди</h3>
+                            <p class="fz-l">Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                        <div class="what-make__service-img-wrap border-radius-medium"><img src="./assets/images/pages/main/what-make/izgorodi-img.jpg" alt=""></div>
+                    </div>
+                    <div class="what-make__service service-mafy">
+                        <div class="what-make__service-img-wrap border-radius-medium"><img src="./assets/images/components/catalog-card/card-1.jpg" alt=""></div>
+                        <div class="what-make__service-img-wrap border-radius-medium"><img src="./assets/images/components/catalog-card/card-1.jpg" alt=""></div>
+                        <div class="what-make__service-text-item border-radius-medium border-large">
+                            <h3>МАФы</h3>
+                            <p class="fz-l">Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                    </div>
+                    <div class="what-make__service service-montage">
+                        <div class="what-make__service-img-wrap border-radius-medium"><img src="./assets/images/pages/main/what-make/montage-img.jpg" alt=""></div>
+                        <div class="what-make__service-text-item border-radius-medium border-large">
+                            <h3>Монтажные работы</h3>
+                            <p class="fz-l">Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mini-form dark-theme">
+            <div class="my-container mini-form__container">
+                <div class="mini-form__inner green-bg border-radius-medium">
+                    <div class="h2 mini-form__title">Работаем по&nbsp;всей России, доставим и&nbsp;поможем
+                        с&nbsp;установкой</div>
+                    <div class="mini-form__right-content">
+                        <div class="flex flex-column items-center texts-center mini-form__form">
+                            <div class="flex flex-column mini-form__fields">
+                                <input type="text" class="my-input --size-m --circle-border --border-white --no-bg"
+                                    placeholder="E-mail">
+                                <button class="my-button --size-m --bordered --theme-white">Уточнить стоимость</button>
+                            </div>
+                            <div class="mini-form__agree-text">
+                                Подписываясь, я принимаю <a href="">условия эксплуатации</a>
+                            </div>
+                        </div>
+                        <div class="border-radius-medium mini-form__img-wrap"><img
+                                src="./assets/images/components/catalog-card/card-1.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="partners">
             <div class="my-container partners__container">
                 <h2 class="partners__title">С кем мы работаем</h2>
@@ -524,7 +575,7 @@
                         <p class="footer__individ-info d-lg-none">ИП Шовковая Екатерина Сергеевна <br> <br> ИНН
                             231126207627 <br> <br> ОГРНИП
                             324237500435312</p>
-                        <p class="footer__bottom-text align-center">Использование материалов с данного сайта разрешено
+                        <p class="footer__bottom-text texts-center">Использование материалов с данного сайта разрешено
                             только по согласию с владельцем. Владелец оставляет за собой право воспользоваться 146
                             статьей УК РФ при нарушении авторских и смежных прав. Вся предоставленная на сайте
                             информация ни при каких условиях не является публичной офертой, определяемой положениями
@@ -545,6 +596,7 @@
     <script src="./assets/scripts/fancybox-init.js"></script>
 
 
+    <!-- Скрипты страницы -->
     <script>
         const swiper1 = new Swiper(".catalog__buttons .swiper", {
             slidesPerView: "auto",
@@ -620,9 +672,9 @@
                     freeMode: false,
                 },
                 992: {
+                    freeMode: false,
                     slidesPerView: 3,
                     spaceBetween: 50,
-                    freeMode: false,
                 },
                 1320: {
                     freeMode: true,

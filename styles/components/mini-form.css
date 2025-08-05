@@ -11,6 +11,13 @@
     gap: 30px;
 }
 
+.dark-theme .mini-form__inner {
+    padding: 40px 58px;
+    background: url('../../assets/images/components/mini-form/bg-dark-img.webp') no-repeat center/cover;
+    gap: 60px;
+    background-position: center top;
+}
+
 .mini-form__title {
     font-size: 60px;
     font-weight: 700;
@@ -20,10 +27,33 @@
     margin-bottom: 0;
 }
 
+.dark-theme .mini-form__title {
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: var(--letter-spacing);
+    margin-bottom: 0;
+    max-width: 419px;
+}
+
+.mini-form__right-content {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+}
+
+.mini-form__right-content>* {
+    flex: 1 1 calc(50% - 60px);
+}
+
 .mini-form__form {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+
+.dark-theme .mini-form__form {
+    gap: 7px;
+    justify-content: center;
 }
 
 .mini-form__fields {
@@ -31,14 +61,26 @@
     gap: 10px;
 }
 
+.dark-theme .mini-form__fields {
+    gap: 15px;
+    width: 100%;
+}
+
 .mini-form__fields * {
     width: 306px;
+}
+
+.dark-theme .mini-form__fields * {
+    width: 100% !important;
 }
 
 .mini-form__agree-text {
     font-size: 14px;
     line-height: 18px;
     letter-spacing: var(--letter-spacing);
+}
+
+.mini-form:not(.dark-theme) .mini-form__agree-text {
     align-self: flex-end;
 }
 
@@ -48,6 +90,17 @@
 
 .mini-form__agree-text a:hover {
     color: #d7d7d7;
+}
+
+.mini-form__img-wrap {
+    max-height: 184px;
+    display: flex;
+    align-items: center;
+}
+
+.mini-form__img-wrap img {
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 1581px) {
@@ -65,9 +118,27 @@
         padding: 45px 40px;
     }
 
+    .dark-theme .mini-form__inner {
+        padding: 35px 40px;
+        gap: 30px;
+    }
+
+    .mini-form__right-content {
+        gap: 30px;
+    }
+
+    .mini-form__right-content>* {
+        flex: 1 1 calc(50% - 30px);
+    }
+
     .mini-form__title {
         font-size: 40px;
         line-height: 1.2;
+    }
+
+    .dark-theme .mini-form__title {
+        font-size: 36px;
+        max-width: 305px;
     }
 
     .mini-form__fields * {
@@ -76,13 +147,29 @@
 }
 
 @media (max-width: 991px) {
+    .dark-theme .mini-form__inner {
+        padding: 42px 40px;
+        gap: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .mini-form__title {
         max-width: 380px;
+    }
+
+    .dark-theme .mini-form__title {
+        font-size: 38px;
+        max-width: 780px;
     }
 
     .mini-form__form {
         max-width: 280px;
         width: 100%;
+    }
+
+    .dark-theme .mini-form__form {
+        max-width: none;
     }
 
     .mini-form__fields {
@@ -100,6 +187,20 @@
     }
 }
 
+@media (max-width: 769px) {
+    .dark-theme .mini-form__inner {
+        gap: 35px;
+    }
+
+    .mini-form__right-content {
+        gap: 20px;
+    }
+
+    .dark-theme .mini-form__form {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 700px) {
     .mini-form__inner {
         padding: 35px 30px;
@@ -107,14 +208,36 @@
         gap: 80px
     }
 
+    .dark-theme .mini-form__inner {
+        gap: 30px;
+    }
+
+    .mini-form__right-content {
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .dark-theme .mini-form__form {
+        gap: 25px;
+        order: 2;
+    }
+
     .mini-form__title {
         max-width: none;
         align-self: flex-start;
     }
 
+    .dark-theme .mini-form__title {
+        font-size: 35px;
+    }
+
     .mini-form__form {
         max-width: none;
         gap: 18px;
+    }
+
+    .dark-theme .mini-form__fields {
+        gap: 12px;
     }
 
     .mini-form__agree-text {
@@ -127,13 +250,26 @@
         padding: 30px 25px;
     }
 
+    .dark-theme .mini-form__inner {
+        padding: 30px 25px 40px;
+    }
+
     .mini-form__title {
         font-size: 30px;
         line-height: 1;
     }
 
+    .dark-theme .mini-form__title {
+        font-size: 30px;
+        max-width: none;
+    }
+
     .mini-form__form {
         gap: 22px;
+    }
+
+    .mini-form__img-wrap {
+        max-height: 140px;
     }
 }
 
@@ -142,9 +278,29 @@
         padding: 30px 20px;
     }
 
+    .dark-theme .mini-form__inner {
+        padding: 30px 20px 42px;
+    }
+
     .mini-form__title {
         font-size: 26px;
         font-weight: 800;
         max-width: 218px;
+    }
+
+    .dark-theme .mini-form__title {
+        font-size: 26px;
+    }
+
+    .dark-theme .mini-form__fields {
+        gap: 10px;
+    }
+
+    .dark-theme .mini-form__form {
+        gap: 32px;
+    }
+
+    .mini-form__img-wrap {
+        max-height: 108px;
     }
 }
