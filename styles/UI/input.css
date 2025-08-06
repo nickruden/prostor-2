@@ -32,6 +32,9 @@
 .my-input.--no-bg {
     background-color: transparent;
 }
+.my-input.--no-border {
+    border: none;
+}
 
 .my-input.--circle-border {
     border-radius: 30px;

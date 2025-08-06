@@ -1,0 +1,25 @@
+.FAQ {}
+
+.FAQ__title {}
+
+.FAQ__accordion {
+    margin-top: 40px;
+}
+
+@media (max-width: 1581px) {}
+
+@media (max-width: 1321px) {
+    .FAQ__accordion {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .FAQ__accordion {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 769px) {}
+
+@media (max-width: 575px) {}

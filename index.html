@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="./styles/components/footer.css">
     <link rel="stylesheet" href="./styles/components/mini-form.css">
     <link rel="stylesheet" href="./styles/components/catalog.css">
+    <link rel="stylesheet" href="./styles/components/my-accordion.css">
+
+    <link rel="stylesheet" href="./styles/components/section/FAQ.css">
 
 
     <!-- СТИЛИ СТРАНИЦЫ -->
@@ -211,7 +214,7 @@
                     <div class="h2 mini-form__title">Скидка 5% <br> на&nbsp;первый заказ</div>
                     <div class="mini-form__form">
                         <div class="mini-form__fields">
-                            <input type="text" class="my-input --size-m --circle-border" placeholder="E-mail">
+                            <input type="text" class="my-input --size-m --no-border --circle-border" placeholder="E-mail">
                             <button class="my-button --size-m --bordered --theme-white">Оставить заявку</button>
                         </div>
                         <div class="mini-form__agree-text">
@@ -684,6 +687,56 @@
                 </div>
             </div>
         </section>
+        <!-- <section class="reviews">
+            <div class="my-container">
+                <h2 class="reviews__title"></h2>
+                <div class="reviews__slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="reviews__slide">
+                                    <div class="reviews__slide-inner">
+                                        <div class="reviews__slide-desc"></div>
+                                        <div class="reviews__slide-gallery"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="FAQ">
+            <div class="my-container">
+                <h2 class="FAQ__title">Частые вопросы:</h2>
+                <div class="FAQ__accordion my-accordion" id="accordion1">
+                    <div class="my-accordion__item border-medium border-radius-medium">
+                        <div class="h3 my-accordion-header active"><span>Как поставляется изгородь?</span></div>
+                        <div class="flex flex-column my-accordion-content fz-l">
+                            <p>Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                    </div>
+                    <div class="my-accordion__item border-medium border-radius-medium">
+                        <div class="h3 my-accordion-header"><span>Возможно в домашних условиях установить декоративную изгородь?</span></div>
+                        <div class="flex flex-column my-accordion-content fz-l">
+                            <p>Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                    </div>
+                    <div class="my-accordion__item border-medium border-radius-medium">
+                        <div class="h3 my-accordion-header"><span>Возможно поставить зелёный забор для спортивных полей?</span></div>
+                        <div class="flex flex-column my-accordion-content fz-l">
+                            <p>Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                    </div>
+                    <div class="my-accordion__item border-medium border-radius-medium">
+                        <div class="h3 my-accordion-header"><span>Можно использовать изгородь для детских сооружений?</span></div>
+                        <div class="flex flex-column my-accordion-content fz-l">
+                            <p>Наша команда работает по принципу — нет ничего невозможного, именно поэтому Калифорнийская изгородь имеет широкий спектр применения.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -696,7 +749,7 @@
                 </div>
                 <div class="flex flex-column footer__mini-form-form footer-form">
                     <div class="flex footer-form__fields border-radius-large">
-                        <input type="email" class="my-input --size-m border-radius-large" placeholder="E-mail">
+                        <input type="email" class="my-input --size-m --no-border border-radius-large" placeholder="E-mail">
                         <button class="my-button --size-s border-radius-medium">Отправить</button>
                     </div>
                     <div class="footer-form__agree-text">
@@ -780,6 +833,7 @@
     <!-- ОБЩИЕ СКРИПТЫ -->
     <script src="./assets/scripts/components/header.js"></script>
     <script src="./assets/scripts/fancybox-init.js"></script>
+    <script src="./assets/scripts/components/accordion.js"></script>
 
 
     <!-- Скрипты страницы -->
