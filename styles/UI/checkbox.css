@@ -1,0 +1,125 @@
+.my-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    position: relative;
+    z-index: 200;
+}
+
+.my-checkbox__old {
+    display: none;
+}
+
+.my-checkbox__new {
+    display: inline-block;
+    height: 32px;
+    max-width: 32px;
+    width: 100%;
+    border: 2px solid var(--color-green);
+    position: relative;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.my-checkbox__old:checked+.my-checkbox__new::before {
+    content: '';
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    width: 10px;
+    height: 18px;
+    border: solid var(--color-white);
+    border-width: 0 3px 3px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.my-checkbox__old:checked+.my-checkbox__new {
+    background-color: var(--color-green);
+}
+
+.my-checkbox__text {
+    display: inline-block;
+    color: var(--color-white);
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.my-checkbox__text a {
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.my-checkbox__text a:hover {
+    color: var(--color-gray);
+}
+
+@media (max-width: 1581px) {
+    .my-checkbox__text {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .my-checkbox__new {
+        height: 28px;
+        max-width: 28px;
+    }
+
+    .my-checkbox__old:checked+.my-checkbox__new::before {
+        top: 43%;
+        left: 50%;
+        width: 9px;
+        height: 17px;
+    }
+}
+
+@media (max-width: 991px) {
+    .my-checkbox__new {
+        height: 25px;
+        max-width: 25px;
+    }
+
+    .my-checkbox__old:checked+.my-checkbox__new::before {
+        top: 43%;
+        left: 50%;
+        width: 8px;
+        height: 16px;
+    }
+
+    .my-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 769px) {
+    .my-checkbox__text {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 575px) {
+    .my-checkbox__text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .my-checkbox__new {
+        height: 18px;
+        max-width: 18px;
+        border-radius: 3px;
+        border: 1px solid var(--color-green);
+    }
+
+    .my-checkbox__old:checked+.my-checkbox__new::before {
+        top: 43%;
+        left: 50%;
+        width: 6px;
+        height: 10px;
+    }
+}

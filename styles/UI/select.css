@@ -1,0 +1,150 @@
+.my-select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    font-family: 'Montserrat';
+    position: relative;
+    z-index: 400;
+}
+
+.my-select__element {
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 18.5px 70px 18.5px 27px;
+    color: #FFF;
+    background: transparent;
+    border-bottom: 1px solid #FFF;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-select__element.active {
+    background: #FFF !important;
+    color: #000 !important;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.my-select__options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #FFF;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 500;
+    top: 100%;
+    border-radius: 0px 0px 16px 16px;
+}
+
+.my-select__options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.my-select__options::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.my-select-arrow {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-left: 2px solid var(--color-green);
+    border-bottom: 2px solid var(--color-green);
+    position: absolute;
+    right: 27px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    pointer-events: none;
+    transition: transform 0.3s;
+}
+
+.my-select-arrow.open {
+    transform: rotate(135deg);
+    bottom: 20px;
+}
+
+
+.my-select__option {
+    padding: 15px 27px;
+    font-size: 23px;
+    color: #000;
+    cursor: pointer;
+}
+
+.my-select__option:hover {
+    background: #f0f0f0;
+}
+
+@media (max-width: 1581px) {
+
+    .my-select__element,
+    .my-select__option {
+        padding: 16px 70px 16px 27px;
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 1321px) {
+
+    .my-select__element,
+    .my-select__option {
+        padding: 16px 70px 16px 20px;
+    }
+}
+
+@media (max-width: 769px) {
+
+    .my-select__element,
+    .my-select__option {
+        font-size: 20px;
+        line-height: 1.2;
+        padding: 16px 80px 16px 20px;
+    }
+
+    .my-select-arrow {
+        width: 14px;
+        height: 14px;
+        right: 34px;
+        bottom: 23px;
+    }
+
+    .my-select__element.active {
+        border-radius: 12px 12px 0px 0px;
+    }
+
+    .my-select__options {
+        border-radius: 0px 0px 12px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .my-select-arrow {
+        width: 10px;
+        height: 10px;
+        right: 25px;
+        bottom: 19px;
+    }
+
+    .my-select__element,
+    .my-select__option {
+        padding: 15px 58px 15px 0px;
+        font-size: 18px;
+    }
+
+    .my-select__element.active {
+        border-radius: 0px;
+    }
+
+    .my-select__options {
+        border-radius: 0px;
+    }
+}

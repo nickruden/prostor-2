@@ -147,6 +147,10 @@
         font-size: 18px;
     }
 
+    .my-button.--size-s {
+        width: 100%;
+    }
+
     .my-button.--theme-white:not(class*=[bordered]) {
         border: 2px solid var(--color-green);
         padding: 13px 0px;

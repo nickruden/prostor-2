@@ -32,6 +32,7 @@
 .my-input.--no-bg {
     background-color: transparent;
 }
+
 .my-input.--no-border {
     border: none;
 }
@@ -62,10 +63,15 @@
     color: var(--color-white);
 }
 
+.my-input.--no-border-radius {
+    border-radius: 0px;
+}
+
 .my-input.--size-xl {
     padding: 18.5px 18px;
     font-size: 23px;
-    line-height: 32;
+    font-weight: 400;
+    line-height: 32px;
 }
 
 .my-input.--size-l {
@@ -84,14 +90,14 @@
 
 @media (max-width: 1581px) {
     .my-input.--size-xl {
-        padding: 16px 16px 16px 0px;
+        padding: 16px 16px 16px 27px;
         font-size: 21px;
     }
 }
 
 @media (max-width: 1320px) {
     .my-input.--size-xl {
-        padding: 16px 16px 16px 0px;
+        padding: 16px 16px 16px 20px;
         font-size: 21px;
     }
 }

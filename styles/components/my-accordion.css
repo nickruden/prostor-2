@@ -127,6 +127,10 @@
     .my-accordion-content {
         padding-right: 18px;
     }
+
+    .my-accordion-header span {
+        line-height: 130%;
+    }
 }
 
 @media (max-width: 420px) {
