@@ -7,10 +7,26 @@
     color: #2B2A29;
     background-color: #FFF;
     padding: 12px;
+    border: 2px solid var(--color-green);
+    border-radius: 7px;
+    width: 100%;
 }
 
 .my-input::placeholder {
     color: #2B2A29;
+}
+
+.required-container {
+    position: relative;
+    display: inline-block;
+}
+
+.required-container::after {
+    content: "*";
+    color: red;
+    position: absolute;
+    right: -10px;
+    top: 0;
 }
 
 .my-input.--no-bg {
@@ -24,6 +40,10 @@
 .my-input.--border-white {
     border: 1px solid var(--color-white);
     color: var(--color-white);
+}
+
+.my-input.--border-green::placeholder {
+    border: 2px solid var(--color-green);
 }
 
 .my-input.--border-white::placeholder {
