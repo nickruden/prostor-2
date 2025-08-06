@@ -1,11 +1,322 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статья</title>
+    <title>Prostor</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/x-icon">
+
+    <!-- БИБЛИОТЕКИ -->
+    <link rel="stylesheet" href="../assets/libs/swiper/swiper-bundle.min.css">
+
+    <!-- ОБЩИЕ СТИЛИ -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+
+    <link rel="stylesheet" href="../styles/UI/button.css">
+    <link rel="stylesheet" href="../styles/UI/input.css">
+
+    <link rel="stylesheet" href="../styles/components/header.css">
+    <link rel="stylesheet" href="../styles/components/footer.css">
+    <link rel="stylesheet" href="../styles/components/mini-form.css">
+    <link rel="stylesheet" href="../styles/components/blog.css">
+    <link rel="stylesheet" href="../styles/components/breadcrumbs.css">
+
+
+    <!-- СТИЛИ СТРАНИЦЫ -->
+    <link rel="stylesheet" href="../styles/pages/article.css">
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="my-container">
+            <div class="header__inner">
+                <a href="../index.html" class="header__logo">
+                    <img src="../assets/images/logo-white.svg" alt="логотип" class="logo-img">
+                </a>
+                <div class="header__controls">
+                    <div class="city-select">
+                        <button class="city-select__current">Санкт-Петербург</button>
+                        <div class="city-select__body">
+                            <div class="city-select__search-line">
+                                <input type="text" placeholder="Ваш город">
+                            </div>
+                            <div class="city-select__items">
+                                <div class="border-small city-select__item">Санкт-Петербург</div>
+                                <div class="border-small city-select__item">Москва</div>
+                                <div class="border-small city-select__item">Самара</div>
+                                <div class="border-small city-select__item">Тверь</div>
+                                <div class="border-small city-select__item">Псков</div>
+                                <div class="border-small city-select__item">Казань</div>
+                                <div class="border-small city-select__item">Ростов-на-Дону</div>
+                                <div class="border-small city-select__item">Сыктывкар</div>
+                                <div class="border-small city-select__item">Пермь</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:+79184051058" class="header__phone">
+                        <span class="phone-icon">
+                            <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.78977 1.46851L2.7812 0.776889C3.32416 0.397546 3.98659 0.22871 4.64488 0.301885C5.30317 0.375061 5.91236 0.685248 6.35875 1.17457L7.8291 2.78644C8.21298 3.20735 8.45544 3.73788 8.52249 4.30359C8.58953 4.8693 8.47778 5.4418 8.20293 5.94078L7.22543 7.71562C7.19685 7.76748 7.18777 7.82786 7.19983 7.88583C7.2811 8.27362 7.77362 8.91904 8.69034 9.7406C9.35688 10.3373 9.91211 10.7283 10.3341 10.9104C10.6287 11.0382 10.7682 11.0404 10.817 11.0077L12.5214 9.80667C12.9868 9.47872 13.5433 9.30464 14.1126 9.30884C14.682 9.31303 15.2358 9.4953 15.6964 9.83007L17.4529 11.108C17.987 11.4966 18.362 12.0659 18.5082 12.71C18.6544 13.3542 18.5619 14.0295 18.2479 14.6107L17.6725 15.6763C17.3669 16.2414 16.9202 16.7177 16.3759 17.0589C15.8316 17.4001 15.2082 17.5945 14.5664 17.6232C11.7329 17.7498 8.68728 16.3226 5.41799 13.3956C2.14432 10.4648 0.390504 7.5909 0.208063 4.75587C0.167166 4.11821 0.291214 3.48077 0.568253 2.90498C0.845292 2.32919 1.26598 1.83447 1.78977 1.46851ZM2.64215 2.68908C2.32794 2.90849 2.07552 3.20512 1.9092 3.5504C1.74288 3.89567 1.66828 4.27795 1.69257 4.66042C1.84612 7.04454 3.40106 9.59224 6.41048 12.2871C9.41553 14.9782 12.1156 16.2431 14.5008 16.1373C14.8856 16.1198 15.2594 16.003 15.5858 15.7983C15.9121 15.5936 16.1799 15.3078 16.3631 14.9689L16.9394 13.903C17.0822 13.6388 17.1243 13.3317 17.0578 13.0388C16.9913 12.746 16.8208 12.4872 16.5779 12.3105L14.8227 11.0333C14.6132 10.8809 14.3613 10.7979 14.1023 10.796C13.8433 10.794 13.5902 10.8733 13.3785 11.0226L11.67 12.2271C10.6748 12.9168 9.38294 12.3582 7.69785 10.8491C6.5628 9.83296 5.90693 8.97282 5.74318 8.19033C5.65887 7.7837 5.72206 7.3621 5.92206 6.99793L6.89956 5.22308C7.02458 4.99627 7.07544 4.736 7.045 4.4788C7.01456 4.22161 6.90435 3.9804 6.72984 3.78904L5.25949 2.17716C5.05665 1.95495 4.77994 1.81406 4.48091 1.78077C4.18189 1.74748 3.88096 1.82404 3.63421 1.9962L2.64215 2.68908Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span>+7 (918) 405-10-58</span>
+                    </a>
+                    <button class="burger-button desctop-burger" data-open-menu="desktop" no-change>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="burger-button mobile-burger" data-open-menu="mobile">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header__desctop-menu desctop-menu" data-id-menu="desktop">
+                    <div class="desctop-menu__content">
+                        <header>
+                            <h3>меню</h3>
+                            <button class="button-close-desctop-menu">закрыть</button>
+                        </header>
+                        <nav class="desctop-menu__nav">
+                            <ul class="desctop-menu__nav-items">
+                                <li><a href="./catalog.html">Каталог</a></li>
+                                <li><a href="./blog.html">Блог</a></li>
+                                <li><a href="./about.html">О нас</a></li>
+                                <li><a href="">Покупателям</a></li>
+                                <li><a href="./contacts.html">Контакты</a></li>
+                                <li><a href="./cooperation.html">Сотрудничество</a></li>
+                            </ul>
+                        </nav>
+                        <div class="desctop-menu__contacts">
+                            <div class="h3 desctop-menu__contacts-title">Остались ВОПРОСы?</div>
+                            <div class="desctop-menu__contacts-items">
+                                <a href="tel:+79184051058" class="phone-link">+7 (918) 405-10-58</a>
+                                <a href="mailto:info@ligorod.ru" class="email-link">info@ligorod.ru</a>
+                            </div>
+                            <div class="desctop-menu__cmd">
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/WA.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/VK.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/TG.svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__mobile mobile-menu" data-id-menu="mobile">
+
+            </div>
+        </div>
+    </header>
+    <div class="my-overlay"></div>
+
+    <main class="main">
+        <section class="breadcrumbs">
+            <div class="my-container">
+                <div class="breadcrumbs__path">
+                    <a href="../index.html" class="breadcrumbs__path-item">Главная</a>
+                    <a href="./blog.html" class="breadcrumbs__path-item">Блог</a>
+                    <a href="./article.html" class="breadcrumbs__path-item">Статья</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="article">
+            <div class="my-container article__container">
+                <header class="article__header">
+                    <div class="article__img-wrap border-radius-medium">
+                        <img src="../assets/images/pages/article/article-img.png" alt="" class="article__img">
+                    </div>
+                    <div class="flex flex-column article__header-texts">
+                        <div class="article__date">
+                            Статья от <span>12.06.2025</span>
+                        </div>
+                        <h1 class="article__title">Калифорнийская изгородь: уход и рекомендации</h1>
+                        <div class="article__pre-title fz-m-plus">
+                            <p> Калифорнийская изгородь — это не просто элемент
+                                ландшафтного дизайна, но и важный способ создания уюта и защиты вашего участка. Эти
+                                живые
+                                изгороди, состоящие из разнообразных растений, прекрасно вписываются в любой ландшафт и
+                                требуют особого ухода. В этой статье мы рассмотрим основные аспекты ухода за
+                                калифорнийской
+                                изгородью и дадим полезные рекомендации.</p>
+                        </div>
+                    </div>
+                </header>
+                <div class="flex flex-column article__body">
+                    <div class="article__text-item">
+                        <h2>Выбор растений</h2>
+                        <div class="article__item-texts fz-m-plus">
+                            <p>Калифорнийская изгородь может включать как местные, так и экзотические растения.
+                                Популярные варианты — это лаванда, розмарин, можжевельник, а также различные виды
+                                кустарников и деревьев. При выборе растений учитывайте климатические условия вашего
+                                региона, тип почвы и уровень освещения. Местные виды не только лучше адаптируются к
+                                окружающей среде, но и требуют меньше ухода.</p>
+                        </div>
+                    </div>
+                    <div class="article__text-item">
+                        <h2>Полив</h2>
+                        <div class="article__item-texts fz-m-plus">
+                            <p>Правильный полив — ключевой аспект в уходе за калифорнийской изгородью. Молодые растения
+                                нуждаются в регулярном поливе, особенно в первые годы после посадки. Важно помнить, что
+                                большинство калифорнийских растений хорошо переносят засуху, поэтому переувлажнение
+                                может быть вредным. Рекомендуется использовать капельное орошение или мульчирование для
+                                сохранения влаги.</p>
+                        </div>
+                    </div>
+                    <div class="article__text-item">
+                        <h2>Обрезка</h2>
+                        <div class="article__item-texts fz-m-plus">
+                            <p>Регулярная обрезка помогает поддерживать форму и здоровье вашей изгороди. Обрезайте
+                                растения весной или осенью, когда они находятся в состоянии покоя. Удаляйте сухие и
+                                поврежденные ветви, а также проводите формирующую обрезку для достижения желаемой высоты
+                                и густоты изгороди. Это также способствует лучшему воздухообмену и предотвращает
+                                развитие болезней.</p>
+                        </div>
+                    </div>
+                    <div class="article__text-item">
+                        <h2>Удобрение</h2>
+                        <div class="article__item-texts fz-m-plus">
+                            <p>Для обеспечения здорового роста растений необходимо регулярно вносить удобрения.
+                                Выбирайте органические удобрения, такие как компост или перегной, которые улучшат
+                                структуру почвы и обеспечат растения необходимыми питательными веществами. Удобрения
+                                следует вносить в начале весны и осенью.</p>
+                        </div>
+                    </div>
+                    <div class="article__text-item">
+                        <h2>Защита от вредителей и болезней</h2>
+                        <div class="article__item-texts fz-m-plus">
+                            <p>Калифорнийские растения могут подвергаться воздействию различных вредителей и болезней.
+                                Регулярно осматривайте свою изгородь на наличие признаков поражения. В случае выявления
+                                проблем используйте натуральные методы борьбы или безопасные химические средства, чтобы
+                                минимизировать вред окружающей среде.</p>
+                        </div>
+                    </div>
+                    <div class="article__text-item">
+                        <h2>Эстетический уход</h2>
+                        <div class="article__item-texts fz-m-plus">
+                            <p>Чтобы ваша калифорнийская изгородь выглядела ухоженной, уделяйте внимание эстетике.
+                                Удаляйте сорняки, следите за чистотой вокруг растений и поддерживайте гармонию в высоте
+                                и форме изгороди. Использование различных текстур и цветов растений поможет создать
+                                интересный визуальный эффект.</p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="article__footer">
+                    <div class="flex article__footer-content">
+                        <div class="article__footer-title fz-m-plus">Заключение:</div>
+                        <div class="flex flex-column article__footer-texts fz-m-plus">
+                            <p>Уход за калифорнийской изгородью требует внимания и заботы, но результат стоит усилий.
+                                Правильный выбор растений, регулярный полив, обрезка и удобрение помогут создать
+                                красивую и здоровую изгородь, которая станет настоящим украшением вашего участка. Следуя
+                                этим рекомендациям, вы сможете наслаждаться уютом и красотой своей калифорнийской
+                                изгороди на протяжении многих лет.</p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__mini-form green-bg border-radius-medium">
+            <div class="flex space-between my-container">
+                <div class="flex flex-column footer__mini-form-texts">
+                    <div class="h2 footer__mini-form-title">Узнай об акциях первым</div>
+                    <div class="footer__mini-form-text">Оформи рассылку и получи <span class="green">скидку 5%</span> на
+                        первый заказ</div>
+                </div>
+                <div class="flex flex-column footer__mini-form-form footer-form">
+                    <div class="flex footer-form__fields border-radius-large">
+                        <input type="email" class="my-input --size-m border-radius-large" placeholder="E-mail">
+                        <button class="my-button --size-s border-radius-medium">Отправить</button>
+                    </div>
+                    <div class="footer-form__agree-text">
+                        Подписываясь, я принимаю <a href="">условия эксплуатации</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__main">
+            <div class="my-container">
+                <div class="footer__inner">
+                    <div class="flex space-between footer__top">
+                        <div class="footer__top-left">
+                            <a href="../index.html" class="footer__logo"><img src="../assets/images/logo-green.svg"
+                                    alt=""></a>
+                            <p class="footer__pre-title d-none d-md-flex">технологично быстро <br> надежно</p>
+                            <div class="desctop-menu__cmd d-none d-md-flex">
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/WA.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/VK.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/TG.svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                        <nav class="flex footer__nav d-none d-md-flex">
+                            <ul class="flex flex-column footer__menu fz-m">
+                                <li><a href="../index.html">Главная</a></li>
+                                <li><a href="./about.html">О нас</a></li>
+                                <li><a href="./blog.html">Каталог</a></li>
+                                <li><a href="">магазины</a></li>
+                            </ul>
+                            <ul class="flex flex-column footer__menu fz-m">
+                                <li><a href="./cooperation.html">Покупателям</a></li>
+                                <li><a href="./blog.html">блог</a></li>
+                                <li><a href="">акции</a></li>
+                                <li><a href="./contacts.html">контакты</a></li>
+                            </ul>
+                        </nav>
+                        <div class="flex flex-column footer__contacts">
+                            <div class="footer__contacts-links">
+                                <a href="mailto:info@ligorod.ru" class="email-link">info@ligorod.ru</a>
+                                <a href="tel:+79184051058" class="phone-link">+7 (918) 405-10-58</a>
+                            </div>
+                            <div class="desctop-menu__cmd d-md-none">
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/WA.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/VK.svg"
+                                        alt=""></a>
+                                <a href="" class="desctop-menu__cmd-item"><img src="../assets/images/socials/TG.svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-column footer__bottom">
+                        <div class="flex space-between footer__bottom-who-did">
+                            <p>© 2019–2025 ИЗГОРОДЬ</p>
+                            <p class="d-none d-lg-flex">ИП Шовковая Екатерина Сергеевна / ИНН 231126207627 / ОГРНИП
+                                324237500435312</p>
+                            <p>Design by SAVOV</p>
+                        </div>
+                        <p class="footer__individ-info d-lg-none">ИП Шовковая Екатерина Сергеевна <br> <br> ИНН
+                            231126207627 <br> <br> ОГРНИП
+                            324237500435312</p>
+                        <p class="footer__bottom-text texts-center">Использование материалов с данного сайта разрешено
+                            только по согласию с владельцем. Владелец оставляет за собой право воспользоваться 146
+                            статьей УК РФ при нарушении авторских и смежных прав. Вся предоставленная на сайте
+                            информация ни при каких условиях не является публичной офертой, определяемой положениями
+                            Статьи 437 (2) Гражданского кодекса РФ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- БИБЛИОТЕКИ -->
+    <script src="../assets/libs/swiper/swiper-bundle.min.js"></script>
+
+
+    <!-- ОБЩИЕ СКРИПТЫ -->
+    <script src="../assets/scripts/components/header.js"></script>
 </body>
+
 </html>
