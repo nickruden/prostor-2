@@ -1694,8 +1694,6 @@
     transform: rotate(-45deg);
 }
 
-
-
 @media (max-width: 1581px) {}
 
 @media (max-width: 1320px) {
@@ -1793,3 +1791,313 @@
 @media (max-width: 575px) {}
 
 @media (max-width: 420px) {}
+
+
+/* Строение */
+.structure {}
+
+.structure .my-container {
+    position: relative;
+}
+
+.structure .my-container::after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 731 573' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23EDF7D9' fill-rule='evenodd' d='M701 163c16 12 20 35 8 50-44 58-101 111-165 137-67 27-142 25-213-29-16-12-20-35-8-50 44-58 101-111 165-137 67-27 142-25 213 29zM175 411c-6 10 0 25 14 33 52 30 110 55 162 62 55 7 103-5 129-50 6-10 0-25-14-33-52-30-110-55-162-62-55-7-103 5-129 50zM76 315c6 17 25 26 41 20 62-23 122-57 162-105 41-50 59-114 31-188-6-17-25-26-41-20-62 23-102 38-142 86-42 50-79 163-52 237z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 731px;
+    height: 552px;
+    position: absolute;
+    bottom: 18px;
+    left: -374px;
+    z-index: -10;
+}
+
+.structure__content {
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.structure__image-item {
+    position: relative;
+}
+
+.structure__image-item::after {
+    content: "";
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1493 953'><path d='M1022.67 9.33579C1001.76 5.82676 980.715 3.41865 959.514 2.11881C938.313 0.818778 916.947 0.625445 895.376 1.5538C873.804 2.48216 852.028 4.52841 830.005 7.70508C807.981 10.8819 785.716 15.1926 763.158 20.6373C740.603 26.0822 717.756 32.6619 694.583 40.3942C671.413 48.1271 647.91 57.0114 624.042 67.0514C600.174 77.0915 575.94 88.2877 551.294 100.655C526.648 113.022 501.595 126.564 476.09 141.278C446.359 158.43 419.59 175.759 395.989 193.063C372.389 210.366 351.95 227.643 334.884 244.693C317.818 261.743 304.123 278.562 293.998 294.954C283.872 311.345 277.325 327.308 274.544 342.636C271.805 357.637 270.62 366.069 271.786 372.4C272.93 378.728 276.438 382.956 283.096 389.545C288.408 394.803 294.007 398.884 301.011 401.875C308.015 404.865 316.432 406.772 327.401 407.685C338.37 408.598 351.89 408.512 369.097 407.538C386.302 406.563 407.202 404.693 432.917 402.019C482.596 396.853 524.302 393.84 525.601 395.324C527.051 396.974 517.809 404.973 501.417 416.787C485.023 428.602 461.468 444.237 434.274 461.144C380.492 494.583 336.119 524.258 292.371 556.665C248.623 589.072 205.506 624.214 154.259 668.578C120.955 697.41 93.6612 722.738 71.8202 745.473C49.9771 768.207 33.5886 788.347 22.0725 806.806C16.3133 816.035 11.7681 824.84 8.37957 833.342C4.97995 841.842 2.75323 850.04 1.59047 858.041C0.476335 866.052 0.351286 873.85 1.26289 881.578C2.17234 889.306 4.10419 896.963 6.96748 904.648C10.575 914.332 15.598 921.698 23.3769 927.796C31.1537 933.893 41.6898 938.721 56.3084 943.326C66.7973 946.63 84.9902 949.332 104.436 950.911C123.88 952.491 144.578 952.953 160.074 951.759C185.448 949.805 216.856 945.458 252.884 939.122C288.913 932.786 329.56 924.461 373.435 914.548C461.189 894.722 561.832 868.546 664.124 839.239C766.415 809.933 870.36 777.492 964.721 745.142C1011.9 728.967 1056.68 712.817 1097.67 697.087C1138.65 681.358 1175.83 666.052 1207.81 651.573C1237.1 638.316 1261.3 626.27 1280.69 615.197C1300.07 604.124 1314.64 594.02 1324.65 584.646C1329.65 579.959 1333.51 575.462 1336.27 571.108C1339.02 566.753 1340.68 562.545 1341.25 558.463C1341.71 554.362 1341.32 550.421 1339.77 546.549C1338.22 542.677 1335.63 538.899 1332.04 535.179C1327.58 530.572 1318.77 526.408 1306.65 522.806C1294.53 519.204 1279.09 516.171 1261.39 513.847C1243.68 511.524 1223.7 509.902 1202.48 509.129C1181.27 508.357 1158.82 508.427 1136.19 509.479C1096.5 511.323 1063.4 512.121 1062.63 511.242C1061.87 510.363 1094.65 498.851 1135.5 485.657C1179.71 471.381 1219.83 457.616 1255.81 444.392C1291.79 431.169 1323.63 418.482 1351.3 406.348C1378.97 394.213 1402.46 382.634 1421.73 371.626C1441.01 360.618 1456.06 350.183 1466.85 340.338C1477.04 331.041 1484.16 321.94 1488.25 313.184C1492.34 304.429 1493.4 296.019 1491.45 288.104C1489.51 280.189 1484.58 272.773 1476.68 265.999C1468.78 259.224 1457.92 253.094 1444.14 247.759C1428.3 241.628 1395.82 234.469 1354.3 227.241C1312.78 220.013 1262.19 212.705 1210.13 206.257C1158.06 199.807 1104.52 194.217 1057.06 190.423C1009.6 186.629 968.225 184.63 940.514 185.367C932.213 185.587 957.904 176.064 997.6 164.191C1020.53 157.334 1041.67 150.144 1060.54 142.875C1079.42 135.606 1096.02 128.251 1109.88 121.072C1123.74 113.891 1134.85 106.882 1142.72 100.292C1150.59 93.7014 1155.24 87.5264 1156.16 82.027C1157.51 73.9176 1155.72 66.3113 1150.8 59.2069C1145.88 52.1026 1137.83 45.5062 1126.68 39.4315C1115.52 33.3571 1101.26 27.8002 1083.92 22.7805C1066.58 17.7607 1046.16 13.2759 1022.67 9.33565Z' fill='%23EDF7D9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 1493px;
+    height: 953px;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.structure__image-wrap {
+    max-width: 700px;
+    max-height: 700px;
+    aspect-ratio: 700 / 700;
+    position: relative;
+}
+
+.structure__image-wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.structure__image-dec-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 32px;
+    min-width: 239px;
+    background-color: var(--color-green);
+    border-radius: 40px;
+    font-weight: 400;
+    position: absolute;
+}
+
+.structure__image-dec-item:nth-of-type(1) {
+    transform: rotate(0.8deg);
+    top: 318px;
+    left: -154px;
+}
+
+.structure__image-dec-item:nth-of-type(2) {
+    transform: rotate(2deg);
+    bottom: 145px;
+    right: -46px;
+}
+
+.structure__image-dec-item:nth-of-type(3) {
+    transform: rotate(-6deg);
+    bottom: 23px;
+    right: -26px;
+}
+
+.structure__image-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    font-size: 33px;
+}
+
+.structure__desc-title {
+    font-family: "MontserratAlternates";
+    font-weight: 800;
+}
+
+.structure__desc-text {
+    font-family: "Comfortaa";
+    font-weight: 300;
+}
+
+@media (max-width: 1581px) {
+    .structure .my-container::after {
+        height: 457px;
+    }
+
+    .structure__image-item::after {
+        height: 831px;
+    }
+
+    .structure__image-wrap {
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .structure__image-dec-item:nth-of-type(1) {
+        top: 279px;
+    }
+
+    .structure__image-dec-item:nth-of-type(3) {
+        bottom: 45px;
+    }
+
+    .structure__image-desc {
+        gap: 20px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .structure .my-container::after {
+        height: 414px;
+        bottom: auto;
+        top: 74px;
+    }
+
+    .structure__image-item::after {
+        height: 730px;
+        top: -90px;
+    }
+
+    .structure__image-desc {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 992px) {
+    .structure .my-container::after {
+        height: 353px;
+        bottom: auto;
+        top: -44px;
+        left: -343px;
+    }
+
+    .structure__content {
+        margin-top: 25px;
+        gap: 35px;
+    }
+
+    .structure__image-item::after {
+        height: 631px;
+        top: -79px;
+    }
+
+    .structure__image-wrap {
+        max-width: 500px;
+        max-height: 500px;
+        aspect-ratio: 500 / 500;
+    }
+
+    .structure__image-dec-item {
+        min-width: 1px;
+        padding: 17px 32px;
+    }
+
+    .structure__image-dec-item:nth-of-type(1) {
+        transform: rotate(-4deg);
+        top: -10px;
+        left: -28px;
+    }
+
+    .structure__image-dec-item:nth-of-type(2) {
+        transform: rotate(8deg);
+        bottom: 100px;
+    }
+
+    .structure__image-dec-item:nth-of-type(3) {
+        transform: rotate(-5deg);
+        bottom: 4px;
+        right: auto;
+        left: -10px;
+    }
+
+    .structure__image-desc {
+        gap: 15px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 769px) {
+    .structure .my-container::after {
+        height: 260px;
+        top: -81px;
+        left: -345px;
+        transform: rotate(-21deg);
+    }
+
+    .structure__content {
+        margin-top: 30px;
+        gap: 45px;
+    }
+
+    .structure__image-item::after {
+        height: 540px;
+        top: -50px;
+    }
+
+    .structure__desc-title {
+        font-family: "MontserratAlternates";
+        font-weight: 700;
+    }
+
+    .structure__desc-text {
+        font-family: "Comfortaa";
+        font-weight: 400;
+    }
+
+    .structure__image-desc {
+        font-size: 26px;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .structure__image-dec-item:nth-of-type(2) {
+        right: -14px;
+    }
+}
+
+@media (max-width: 575px) {
+    .structure .my-container::after {
+        height: 160px;
+        top: -60px;
+    }
+
+    .structure__content {
+        margin-top: 15px;
+        gap: 60px;
+    }
+
+    .structure__image-item::after {
+        height: 460px;
+        top: -20px;
+    }
+
+    .structure__image-wrap {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .structure__image-desc {
+        font-size: 22px;
+    }
+
+    .structure__image-dec-item:nth-of-type(1) {
+        left: -8px;
+    }
+
+    .structure__image-dec-item {
+        padding: 12px 32px;
+    }
+
+    .structure__image-dec-item:nth-of-type(2) {
+        bottom: 30px;
+    }
+
+    .structure__image-dec-item:nth-of-type(3) {
+        bottom: -24px;
+        left: 16px;
+    }
+}
+
+@media (max-width: 420px) {
+    .structure .my-container::after {
+        height: 137px;
+        top: -45px;
+        left: -356px;
+    }
+
+    .structure__image-item::after {
+        height: 342px;
+        top: -30px;
+    }
+
+    .structure__image-wrap {
+        max-width: 260px;
+        max-height: 260px;
+    }
+
+    .structure__image-desc {
+        font-size: 17px;
+    }
+}
