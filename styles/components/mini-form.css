@@ -210,6 +210,7 @@
 
     .dark-theme .mini-form__inner {
         gap: 30px;
+        background: url('../../assets/images/components/mini-form/bg-dark-mobile-img.webp') no-repeat center/cover;
     }
 
     .mini-form__right-content {

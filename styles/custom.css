@@ -170,6 +170,10 @@ h3,
     text-align: center;
 }
 
+.mb-0 {
+    margin-bottom: 0px;
+}
+
 .green {
     color: var(--color-green) !important;
 }

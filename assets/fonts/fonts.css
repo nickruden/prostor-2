@@ -84,3 +84,10 @@
     font-weight: 900;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('./Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
