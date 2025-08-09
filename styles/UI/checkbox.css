@@ -67,6 +67,11 @@
         max-width: 28px;
     }
 
+    .my-checkbox__text {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
     .my-checkbox__old:checked+.my-checkbox__new::before {
         top: 43%;
         left: 50%;
@@ -99,7 +104,6 @@
 @media (max-width: 769px) {
     .my-checkbox__text {
         font-size: 20px;
-        line-height: 1.2;
     }
 }
 

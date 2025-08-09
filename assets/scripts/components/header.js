@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetMenu = document.querySelector(`[data-id-menu="${menuType}"]`);
 
       const isMenuOpen = targetMenu.classList.contains("opened");
+      const isMobileMenuGreen = targetMenu.hasAttribute("green-bg");
+
       closeAllMenus();
 
       if (!isMenuOpen) {
@@ -18,6 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.add("menu-open");
         targetMenu.classList.add("opened");
         overlay.classList.add("active");
+
+        if (menuType !== "desktop") {
+          overlay.style.backgroundColor = isMobileMenuGreen
+            ? "var(--color-green)"
+            : "var(--color-white)";
+        }
+
         if (!this.hasAttribute("no-change")) {
           this.classList.add("active");
         }
@@ -50,5 +59,75 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       closeAllMenus();
     }
+  });
+});
+
+// ВЫБОР ГОРОДА
+document.addEventListener("DOMContentLoaded", function () {
+  const citySelects = document.querySelectorAll(".city-select");
+
+  citySelects.forEach((citySelect) => {
+    const currentBtn = citySelect.querySelector(".city-select__current");
+    const body = citySelect.querySelector(".city-select__body");
+    const searchInput = body?.querySelector("input");
+    const cityItems = body?.querySelectorAll(".city-select__item");
+
+    currentBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      document.querySelectorAll(".city-select__body").forEach((el) => {
+        if (el !== body) {
+          el.classList.remove("active");
+          el.previousElementSibling.classList.remove("open");
+        }
+      });
+
+      body.classList.toggle("active");
+      currentBtn.classList.toggle("open");
+
+      if (body.classList.contains("active") && searchInput) {
+        searchInput.focus();
+      }
+    });
+
+    // ВЫБОР ГОРОДА (можете убрать, если реализуете самостоятельно)
+    if (cityItems) {
+      cityItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          currentBtn.textContent = this.textContent;
+          body.classList.remove("active");
+          currentBtn.classList.remove("open");
+        });
+      });
+    }
+
+    // ПОИСК (можете убрать, если реализуете самостоятельно)
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        const searchText = this.value.toLowerCase();
+
+        cityItems.forEach((item) => {
+          const cityName = item.textContent.toLowerCase();
+          if (cityName.includes(searchText)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    }
+  });
+
+  document.addEventListener("click", function () {
+    document.querySelectorAll(".city-select__body").forEach((body) => {
+      body.classList.remove("active");
+      body.previousElementSibling.classList.remove("open");
+    });
+  });
+
+  document.querySelectorAll(".city-select__body").forEach((body) => {
+    body.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
   });
 });

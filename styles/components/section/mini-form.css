@@ -4,7 +4,7 @@
 
 .mini-form__inner {
     padding: 51px 60px;
-    background: url('../../assets/images/components/mini-form/bg-image.jpg') no-repeat center/cover;
+    background: url('../../../assets/images/components/mini-form/bg-image.jpg') no-repeat center/cover;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,7 +13,7 @@
 
 .dark-theme .mini-form__inner {
     padding: 40px 58px;
-    background: url('../../assets/images/components/mini-form/bg-dark-img.webp') no-repeat center/cover;
+    background: url('../../../assets/images/components/mini-form/bg-dark-img.webp') no-repeat center/cover;
     gap: 60px;
     background-position: center top;
 }
@@ -223,12 +223,12 @@
         padding: 35px 30px;
         flex-direction: column;
         gap: 80px;
-        background: url('../../assets/images/components/mini-form/bg-mobile-image.webp') no-repeat center/cover;
+        background: url('../../../assets/images/components/mini-form/bg-mobile-image.webp') no-repeat center/cover;
     }
 
     .dark-theme .mini-form__inner {
         gap: 30px;
-        background: url('../../assets/images/components/mini-form/bg-dark-mobile-img.webp') no-repeat center/cover;
+        background: url('../../../assets/images/components/mini-form/bg-dark-mobile-img.webp') no-repeat center/cover;
     }
 
     .mini-form__right-content {

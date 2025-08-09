@@ -22,12 +22,15 @@
 
     <link rel="stylesheet" href="./styles/components/header.css">
     <link rel="stylesheet" href="./styles/components/footer.css">
-    <link rel="stylesheet" href="./styles/components/mini-form.css">
+    <link rel="stylesheet" href="./styles/components/section/mini-form.css">
     <link rel="stylesheet" href="./styles/components/catalog.css">
     <link rel="stylesheet" href="./styles/components/my-accordion.css">
+    <link rel="stylesheet" href="./styles/components/form.css">
+    <link rel="stylesheet" href="./styles/components/my-modal.css">
 
     <link rel="stylesheet" href="./styles/components/section/FAQ.css">
     <link rel="stylesheet" href="./styles/components/section/feedback-form.css">
+    <link rel="stylesheet" href="./styles/components/section/reviews.css">
 
 
     <!-- СТИЛИ СТРАНИЦЫ -->
@@ -98,6 +101,25 @@
                                 <li><a href="./pages/cooperation.html">Сотрудничество</a></li>
                             </ul>
                         </nav>
+                        <div class="city-select">
+                            <button class="city-select__current">Санкт-Петербург</button>
+                            <div class="city-select__body">
+                                <div class="city-select__search-line">
+                                    <input type="text" placeholder="Ваш город">
+                                </div>
+                                <div class="city-select__items">
+                                    <div class="border-small city-select__item">Санкт-Петербург</div>
+                                    <div class="border-small city-select__item">Москва</div>
+                                    <div class="border-small city-select__item">Самара</div>
+                                    <div class="border-small city-select__item">Тверь</div>
+                                    <div class="border-small city-select__item">Псков</div>
+                                    <div class="border-small city-select__item">Казань</div>
+                                    <div class="border-small city-select__item">Ростов-на-Дону</div>
+                                    <div class="border-small city-select__item">Сыктывкар</div>
+                                    <div class="border-small city-select__item">Пермь</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="desctop-menu__contacts">
                             <div class="h3 desctop-menu__contacts-title">Остались ВОПРОСы?</div>
                             <div class="desctop-menu__contacts-items">
@@ -117,7 +139,49 @@
                 </div>
             </div>
             <div class="header__mobile mobile-menu" data-id-menu="mobile">
-
+                <nav class="mobile-menu__nav">
+                    <ul class="mobile-menu__nav-items">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./pages/about.html">О нас</a></li>
+                        <li><a href="./pages/catalog.html">Каталог</a></li>
+                        <li><a href="">Магазины</a></li>
+                        <li><a href="">Покупателям</a></li>
+                        <li><a href="./pages/blog.html">Блог</a></li>
+                        <li><a href="">Акции</a></li>
+                        <li><a href="./pages/contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="city-select mobile-city-select">
+                    <button class="city-select__current">Санкт-Петербург</button>
+                    <div class="city-select__body">
+                        <div class="city-select__items">
+                            <div class="border-small city-select__item">Санкт-Петербург</div>
+                            <div class="border-small city-select__item">Москва</div>
+                            <div class="border-small city-select__item">Самара</div>
+                            <div class="border-small city-select__item">Тверь</div>
+                            <div class="border-small city-select__item">Псков</div>
+                            <div class="border-small city-select__item">Казань</div>
+                            <div class="border-small city-select__item">Ростов-на-Дону</div>
+                            <div class="border-small city-select__item">Сыктывкар</div>
+                            <div class="border-small city-select__item">Пермь</div>
+                        </div>
+                        <div class="city-select__search-line">
+                            <input type="text" placeholder="Ваш город">
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu__contacts">
+                    <div class="h3 mobile-menu__contacts-title">Остались ВОПРОСы?</div>
+                    <div class="mobile-menu__contacts-items">
+                        <a href="tel:+79184051058" class="phone-link">+7 (918) 405-10-58</a>
+                        <a href="mailto:info@ligorod.ru" class="email-link">info@ligorod.ru</a>
+                    </div>
+                    <div class="desctop-menu__cmd">
+                        <a href="" class="desctop-menu__cmd-item"><img src="./assets/images/socials/WA.svg" alt=""></a>
+                        <a href="" class="desctop-menu__cmd-item"><img src="./assets/images/socials/VK.svg" alt=""></a>
+                        <a href="" class="desctop-menu__cmd-item"><img src="./assets/images/socials/TG.svg" alt=""></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -149,13 +213,13 @@
                     </div>
                     <div class="d-none d-md-flex hero-section__butons">
                         <a href="./pages/catalog.html" class="my-button --theme-white hero-section__link">Каталог</a>
-                        <button class="my-button">Оставить заявку</button>
+                        <button class="my-button" data-open-modal="#order">Оставить заявку</button>
                     </div>
                 </div>
                 <div class="flex flex-column d-md-none hero-section__butons">
                     <a href="./pages/catalog.html"
                         class="my-button --theme-white --mobile-border hero-section__link">Каталог</a>
-                    <button class="my-button">Оставить заявку</button>
+                    <button class="my-button" data-open-modal="#order">Оставить заявку</button>
                 </div>
             </div>
         </section>
@@ -691,25 +755,191 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="reviews">
+
+        <!-- доделать -->
+        <section class="reviews">
             <div class="my-container">
-                <h2 class="reviews__title"></h2>
+                <h2 class="reviews__title">Отзывы</h2>
                 <div class="reviews__slider">
-                    <div class="swiper">
+                    <div class="swiper reviews__swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="reviews__slide">
+                                <div class="reviews__slide border-medium border-radius-medium">
                                     <div class="reviews__slide-inner">
-                                        <div class="reviews__slide-desc"></div>
-                                        <div class="reviews__slide-gallery"></div>
+                                        <div class="reviews__slide-body">
+                                            <div class="reviews__slide-avatar"><img
+                                                    src="./assets/images/components/reviews/avatar.png" alt=""></div>
+                                            <div class="reviews__slide-desc">
+                                                <h3 class="reviews__slide-title">Только из моря</h3>
+                                                <div class="reviews__slide-ratimg">
+                                                    <div class="reviews__slide-texts fz-s">
+                                                        <p>Свежесть продукции не оставляет сомнений. Все настолько
+                                                            свежее, еще 5 минут назад плавало в море.</p>
+                                                    </div>
+                                                    <div class="reviews__slide-stars"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__gallery">
+                                            <div class="swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-1">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__slide border-medium border-radius-medium">
+                                    <div class="reviews__slide-inner">
+                                        <div class="reviews__slide-body">
+                                            <div class="reviews__slide-avatar"><img
+                                                    src="./assets/images/components/reviews/avatar.png" alt=""></div>
+                                            <div class="reviews__slide-desc">
+                                                <h3 class="reviews__slide-title">Только из моря</h3>
+                                                <div class="reviews__slide-ratimg">
+                                                    <div class="reviews__slide-texts fz-s">
+                                                        <p>Свежесть продукции не оставляет сомнений. Все настолько
+                                                            свежее, еще 5 минут назад плавало в море.</p>
+                                                    </div>
+                                                    <div class="reviews__slide-stars"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__gallery">
+                                            <div class="swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-2">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-2">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-2">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-2">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__slide border-medium border-radius-medium">
+                                    <div class="reviews__slide-inner">
+                                        <div class="reviews__slide-body">
+                                            <div class="reviews__slide-avatar"><img
+                                                    src="./assets/images/components/reviews/avatar.png" alt=""></div>
+                                            <div class="reviews__slide-desc">
+                                                <h3 class="reviews__slide-title">Только из моря</h3>
+                                                <div class="reviews__slide-ratimg">
+                                                    <div class="reviews__slide-texts fz-s">
+                                                        <p>Свежесть продукции не оставляет сомнений. Все настолько
+                                                            свежее, еще 5 минут назад плавало в море.</p>
+                                                    </div>
+                                                    <div class="reviews__slide-stars"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__gallery">
+                                            <div class="swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-3">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-3">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__slide border-medium border-radius-medium">
+                                    <div class="reviews__slide-inner">
+                                        <div class="reviews__slide-body">
+                                            <div class="reviews__slide-avatar"><img
+                                                    src="./assets/images/components/reviews/avatar.png" alt=""></div>
+                                            <div class="reviews__slide-desc">
+                                                <h3 class="reviews__slide-title">Только из моря</h3>
+                                                <div class="reviews__slide-ratimg">
+                                                    <div class="reviews__slide-texts fz-s">
+                                                        <p>Свежесть продукции не оставляет сомнений. Все настолько
+                                                            свежее, еще 5 минут назад плавало в море.</p>
+                                                    </div>
+                                                    <div class="reviews__slide-stars"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__gallery">
+                                            <div class="swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-3">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <a href="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                            data-fancybox="reviews-gallery-3">
+                                                            <img src="./assets/images/pages/main/what-make/izgorodi-img.jpg"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-nav reviews__swiper-nav">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                 </div>
             </div>
-        </section> -->
+        </section>
+
         <section class="FAQ">
             <div class="my-container">
                 <h2 class="FAQ__title">Частые вопросы:</h2>
@@ -755,10 +985,21 @@
                         <div class="h2 feedback-form__title">Оставить заявку</div>
                         <p class="feedback-form__pre-title">Оставьте ваши контакты и наши специалисты свяжутся с вами
                         </p>
-                        <div class="feedback-form__img-wrap"><img
-                                src="./assets/images/components/feedback-form/block-img.png" alt=""></div>
+                        <div class="feedback-form__img-wrap">
+                            <img src="./assets/images/components/feedback-form/block-img.png" alt="">
+                            <div class="feedback-form__decor-elem">
+                                <div class="feedback-form__decor-elem-inner">
+                                    <span> &lt;30 </span> Поставщиков <br> изгородей
+                                </div>
+                            </div>
+                            <div class="feedback-form__decor-elem">
+                                <div class="feedback-form__decor-elem-inner">
+                                    <span>250+</span> Успешных <br> проектов
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <form action="" class="flex flex-column feedback-form__form">
+                    <form action="" method="" class="flex flex-column feedback-form__form">
                         <div class="flex flex-column feedback-form__fields">
                             <input type="text"
                                 class="my-input --no-bg --size-xl --no-border-radius --no-border --border-bottom-white"
@@ -775,11 +1016,16 @@
                                     <span class="my-select-arrow"></span>
                                 </div>
                                 <div class="my-select__options" id="dropdownOptions">
-                                    <div class="my-select__option" data-value="Монтажные работы">Монтажные работы</div>
-                                    <div class="my-select__option" data-value="Работы по земле">Работы по земле</div>
-                                    <div class="my-select__option" data-value="Установка топиария">Установка топиария
+                                    <div class="my-select__option" data-value="Монтажные работы">Монтажные
+                                        работы</div>
+                                    <div class="my-select__option" data-value="Работы по земле">Работы по земле
                                     </div>
-                                    <div class="my-select__option" data-value="Установка МАФов">Установка МАФов МАФов МАФов МАФов МАФов МАФов</div>
+                                    <div class="my-select__option" data-value="Установка топиария">Установка
+                                        топиария
+                                    </div>
+                                    <div class="my-select__option" data-value="Установка МАФов">Установка МАФов
+                                        МАФов
+                                        МАФов МАФов МАФов МАФов</div>
                                     <div class="my-select__option" data-value="Доп. опция 1">Доп. опция 1</div>
                                     <div class="my-select__option" data-value="Доп. опция 2">Доп. опция 2</div>
                                     <div class="my-select__option" data-value="Доп. опция 3">Доп. опция 3</div>
@@ -791,8 +1037,7 @@
                                 <input type="checkbox" name="" id="agree-check" class="my-checkbox__old">
                                 <span class="my-checkbox__new"></span>
                                 <span class="my-checkbox__text">Я ознакомился и согласен с <a href="">условиями
-                                        обработки
-                                        персональных данных</a></span>
+                                        обработки персональных данных</a></span>
                             </label>
                             <div class="recapcha">
                                 <svg viewBox="0 0 359 100" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -981,6 +1226,64 @@
         </div>
     </footer>
 
+    <div class="my-modal" id="order">
+        <div class="my-modal__container border-large border-radius-medium">
+            <div class="my-modal__header">
+                <button class="close-modal-button"></button>
+            </div>
+            <div class="flex flex-column my-modal__content">
+                <header class="flex flex-column my-modal__text-content">
+                    <h2 class="mb-0">Связаться с нами</h2>
+                    <p class="fz-s">Есть вопросы о нашем коворкинг-пространстве и планах членства? Напишите нам,
+                        используя форму ниже, или позвоните нам.</p>
+                </header>
+                <form action="" class="my-modal__form my-form">
+                    <div class="flex flex-column my-form__fields">
+                        <div class="flex-row">
+                            <div class="input-wrapper" is-required>
+                                <label>
+                                    <span class="label-text">Имя <span class="required">*</span></span>
+                                    <input type="text" class="my-input" placeholder="Имя" required>
+                                </label>
+                            </div>
+                            <div class="input-wrapper" is-required>
+                                <label>
+                                    <span class="label-text">Фамилия <span class="required">*</span></span>
+                                    <input type="text" class="my-input" placeholder="Фамилия" required>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-wrapper" is-required>
+                            <label>
+                                <span class="label-text">Email <span class="required">*</span></span>
+                                <input type="email" class="my-input" placeholder="Email" required>
+                            </label>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>
+                                <span class="label-text">Телефон <span class="required">*</span></span>
+                                <input type="tel" class="my-input" placeholder="Телефон" required>
+                            </label>
+                        </div>
+                        <textarea class="my-textarea" name="description-company" id=""
+                            placeholder="Краткое описание компании и перспектив сотрудничества"></textarea>
+                    </div>
+                    <div class="flex my-form__bottom">
+                        <button type="submit" class="my-button">Оставить заявку</button>
+                        <div class="agreement-text">Подписываясь, я принимаю <a href="">условия эксплуатации</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="flex flex-column my-modal_form-texts fz-s">
+                    <p>Мы стремимся отвечать на все запросы в течение 24 рабочих часов. Для скорейшего ответа,
+                        пожалуйста, укажите предпочитаемый вами план членства и любые конкретные вопросы, которые у вас
+                        могут возникнуть. Один из наших специалистов по рабочему пространству будет рад помочь вам в
+                        дальнейшем.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- БИБЛИОТЕКИ -->
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/libs/fancybox/fancybox.umd.js"></script>
@@ -991,6 +1294,8 @@
     <script src="./assets/scripts/fancybox-init.js"></script>
     <script src="./assets/scripts/components/accordion.js"></script>
     <script src="./assets/scripts/components/select.js"></script>
+    <script src="./assets/scripts/components/form.js"></script>
+    <script src="./assets/scripts/components/my-modal.js"></script>
 
 
     <!-- Скрипты страницы -->
@@ -1103,6 +1408,84 @@
                     spaceBetween: 16,
                 },
             },
+        });
+    </script>
+
+    <!-- скрипт отзывов -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainReviewsSwiper = new Swiper('.reviews__swiper', {
+                slidesPerView: 3,
+                centeredSlides: true,
+                spaceBetween: 27,
+                initialSlide: 1,
+                navigation: {
+                    nextEl: '.reviews__swiper-nav .swiper-button-next',
+                    prevEl: '.reviews__swiper-nav .swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    }
+                },
+                on: {
+                    init: function () {
+                        initGallerySliders();
+                    },
+                }
+            });
+
+            function initGallerySliders() {
+                document.querySelectorAll('.reviews__gallery .swiper').forEach((gallery, index) => {
+                    const gallerySwiper = new Swiper(gallery, {
+                        slidesPerView: 3,
+                        spaceBetween: 16,
+                        grabCursor: true,
+                        watchOverflow: true,
+                        nested: true,
+                        observer: true,
+                        observeParents: true,
+                    });
+
+                    // Добавляем ID для Fancybox
+                    const galleryId = `reviews-gallery-${index}`;
+                    gallery.querySelectorAll('a').forEach(a => {
+                        a.setAttribute('data-fancybox', galleryId);
+                    });
+
+                    // Вручную добавляем обработчики событий
+                    const swiperContainer = gallery.closest('.swiper-slide');
+
+                    // При начале взаимодействия с внутренним слайдером
+                    swiperContainer.addEventListener('mouseenter', () => {
+                        mainReviewsSwiper.allowTouchMove = false;
+                        mainReviewsSwiper.mousewheel.disable();
+                        console.log('Блокируем внешний слайдер');
+                    });
+
+                    swiperContainer.addEventListener('touchstart', () => {
+                        mainReviewsSwiper.allowTouchMove = false;
+                        mainReviewsSwiper.mousewheel.disable();
+                        console.log('Блокируем внешний слайдер (touch)');
+                    }, { passive: true });
+
+                    // При окончании взаимодействия с внутренним слайдером
+                    swiperContainer.addEventListener('mouseleave', () => {
+                        mainReviewsSwiper.allowTouchMove = true;
+                        mainReviewsSwiper.mousewheel.enable();
+                        console.log('Разблокируем внешний слайдер');
+                    });
+
+                    swiperContainer.addEventListener('touchend', () => {
+                        mainReviewsSwiper.allowTouchMove = true;
+                        mainReviewsSwiper.mousewheel.enable();
+                        console.log('Разблокируем внешний слайдер (touch)');
+                    }, { passive: true });
+                });
+            }
         });
     </script>
 </body>

@@ -129,3 +129,128 @@
         max-height: 123px;
     }
 }
+
+
+/* Форма сотрудничества */
+.coop-form {}
+
+.coop-form__container {}
+
+.coop-form__inner {
+    padding: 40px 30px;
+}
+
+.coop-form__content {
+    max-width: 750px;
+    gap: 32px;
+}
+
+.coop-form__header {}
+
+.coop-form__header-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.coop-form__header h2 {
+    font-size: 50px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.coop-form__header p {
+    max-width: 540px;
+}
+
+.coop-form__form {}
+
+.coop-form__texts {
+    gap: 20px;
+}
+
+@media (max-width: 1581px) {
+    .coop-form__header h2 {
+        font-size: 48px;
+    }
+
+    .coop-form__header-inner {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1321px) {}
+
+@media (max-width: 991px) {
+    .coop-form__header p {
+        max-width: 490px;
+    }
+
+    .coop-form__texts {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 769px) {
+    .coop-form__container {
+        border: 2px solid var(--color-green);
+        border-radius: 12px;
+    }
+
+    .coop-form__inner {
+        border: none;
+        border-radius: 0px;
+    }
+
+    .coop-form__content {
+        gap: 30px;
+    }
+
+    .coop-form__header-inner {
+        align-items: center;
+    }
+
+    .coop-form__header h2 {
+        font-size: 44px;
+    }
+
+    .coop-form__header p {
+        text-align: center;
+    }
+
+    .coop-form__texts {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .coop-form__inner {
+        padding: 30px 0px;
+    }
+
+    .coop-form__header h2 {
+        font-size: 32px;
+        line-height: 1;
+        text-transform: capitalize;
+    }
+
+    .coop-form__texts {
+        gap: 0px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 420px) {
+    .coop-form__header h2 {
+        font-size: 26px;
+    }
+
+    .coop-form__header p {
+        max-width: 250px;
+    }
+
+    .coop-form__texts {
+        font-size: 14px;
+        letter-spacing: var(--latter-spacing);
+    }
+}

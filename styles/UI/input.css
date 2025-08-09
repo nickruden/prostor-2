@@ -1,4 +1,5 @@
-.my-input {
+.my-input,
+.my-textarea {
     font-family: "Montserrat";
     font-size: 16px;
     font-weight: 400;
@@ -10,24 +11,50 @@
     border: 2px solid var(--color-green);
     border-radius: 7px;
     width: 100%;
+    min-width: 0;
 }
 
 .my-input::placeholder {
     color: #2B2A29;
 }
 
-.required-container {
+.input-wrapper {
     position: relative;
-    display: inline-block;
 }
 
-.required-container::after {
-    content: "*";
-    color: red;
-    position: absolute;
-    right: -10px;
-    top: 0;
+.input-wrapper label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
+
+.label-text {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #2B2A29;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background: #fff;
+    padding: 0 4px;
+}
+
+.label-text .required {
+    display: none;
+    color: red;
+}
+
+.input-wrapper[is-required] .label-text .required {
+    display: inline;
+}
+
+.input-wrapper label:focus-within .label-text {
+    display: none;
+}
+
 
 .my-input.--no-bg {
     background-color: transparent;
@@ -113,7 +140,9 @@
 }
 
 @media (max-width: 769px) {
-    .my-input {
+
+    .my-input,
+    .my-textarea {
         line-height: 1.2;
     }
 

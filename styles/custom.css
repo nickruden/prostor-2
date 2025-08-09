@@ -193,6 +193,8 @@ h3,
 .fz-s {
     font-size: 16px;
     font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.41px;
 }
 
 
@@ -247,6 +249,8 @@ h3,
 
     .fz-s {
         font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0px;
     }
 }
 
@@ -271,7 +275,6 @@ h3,
     .fz-s {
         font-size: 15px;
         font-weight: 300;
-        letter-spacing: var(--letter-spacing);
     }
 }
 
@@ -466,7 +469,7 @@ footer {
 }
 
 .my-overlay.active {
-    z-index: 100;
+    z-index: 800;
     display: block;
 }
 
@@ -486,6 +489,11 @@ footer {
 
 .items-center {
     align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    width: 100%;
 }
 
 
@@ -666,4 +674,8 @@ footer {
     .desctop-menu__cmd-item {
         max-width: 33px;
     }
+}
+
+.modal-open {
+    overflow: hidden;
 }

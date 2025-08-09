@@ -20,9 +20,10 @@
 
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/footer.css">
-    <link rel="stylesheet" href="../styles/components/mini-form.css">
+    <link rel="stylesheet" href="../styles/components/section/mini-form.css">
     <link rel="stylesheet" href="../styles/components/blog.css">
     <link rel="stylesheet" href="../styles/components/breadcrumbs.css">
+    <link rel="stylesheet" href="../styles/components/form.css">
 
 
     <!-- СТИЛИ СТРАНИЦЫ -->
@@ -157,7 +158,8 @@
                     <div class="h2 mini-form__title">Оставьте свои&nbsp;данные и&nbsp;мы с&nbsp;вами свяжемся</div>
                     <div class="mini-form__form">
                         <div class="mini-form__fields">
-                            <input type="text" class="my-input --size-m --no-border --circle-border" placeholder="E-mail">
+                            <input type="text" class="my-input --size-m --no-border --circle-border"
+                                placeholder="E-mail">
                             <button class="my-button --size-m --bordered --theme-white">Оставить заявку</button>
                         </div>
                         <div class="mini-form__agree-text">
@@ -169,38 +171,60 @@
         </section>
         <section class="coop-form">
             <div class="my-container coop-form__container">
-                <div class="flex flex-column coop-form__inner">
-                    <header class="flex flex-column coop-form__header">
-                        <h2>Сотрудничество</h2>
-                        <p>Необходимо отправить заявку на электронную почту info@di-van.com, с темой
-                            письма&nbsp;"Дилерство", указав:</p>
-                    </header>
-                    <form class="coop-form__form my-form">
-                        <div class="my-form__fields">
-                            <div class="required-container">
-                                <input type="text" class="my-input" placeholder="Имя" required>
+                <div class="flex flex-column items-center coop-form__inner border-radius-medium border-large">
+                    <div class="flex flex-column coop-form__content">
+                        <header class="flex flex-column items-center coop-form__header">
+                            <div class="coop-form__header-inner">
+                                <h2 class="mb-0">Сотрудничество</h2>
+                                <p class="fz-s">Необходимо отправить заявку на электронную почту info@di-van.com, с
+                                    темой
+                                    письма&nbsp;"Дилерство", указав:</p>
                             </div>
-                            <div class="required-container">
-                                <input type="text" class="my-input" placeholder="Фамилия" required>
+                        </header>
+                        <form action="" class="coop-form__form my-form">
+                            <div class="flex flex-column my-form__fields">
+                                <div class="flex-row">
+                                    <div class="input-wrapper" is-required>
+                                        <label>
+                                            <span class="label-text">Имя <span class="required">*</span></span>
+                                            <input type="text" class="my-input" placeholder="Имя" required>
+                                        </label>
+                                    </div>
+                                    <div class="input-wrapper" is-required>
+                                        <label>
+                                            <span class="label-text">Фамилия <span class="required">*</span></span>
+                                            <input type="text" class="my-input" placeholder="Фамилия" required>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="input-wrapper" is-required>
+                                    <label>
+                                        <span class="label-text">Email <span class="required">*</span></span>
+                                        <input type="email" class="my-input" placeholder="Email" required>
+                                    </label>
+                                </div>
+                                <div class="input-wrapper">
+                                    <label>
+                                        <span class="label-text">Телефон <span class="required">*</span></span>
+                                        <input type="tel" class="my-input" placeholder="Телефон" required>
+                                    </label>
+                                </div>
+                                <textarea class="my-textarea" name="description-company" id=""
+                                    placeholder="Краткое описание компании и перспектив сотрудничества"></textarea>
                             </div>
-                            <div class="required-container">
-                                <input type="text" class="my-input" placeholder="Email" required>
+                            <div class="flex my-form__bottom">
+                                <button type="submit" class="my-button">Оставить заявку</button>
+                                <div class="agreement-text">Подписываясь, я принимаю <a href="">условия эксплуатации</a>
+                                </div>
                             </div>
-                            <input type="text" class="my-input" placeholder="Телефон">
-                            <textarea name="" id=""
-                                placeholder="Краткое описание компании и перспектив сотрудничества"></textarea>
+                        </form>
+                        <div class="flex flex-column coop-form__texts fz-s">
+                            <p>Мы стремимся отвечать на все запросы в течение 24 рабочих часов. </p>
+                            <p>Для скорейшего ответа, пожалуйста, укажите предпочитаемый вами план членства и любые
+                                конкретные вопросы, которые у вас могут возникнуть. Один из наших специалистов по
+                                рабочему
+                                пространству будет рад помочь вам в дальнейшем.</p>
                         </div>
-                        <div class="flex my-form__bottom">
-                            <button class="my-button">Оставить заявку</button>
-                            <div class="agreement-text">Подписываясь, я принимаю <a href="">условия эксплуатации</a>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="flex flex-column coop-form__texts">
-                        <p>Мы стремимся отвечать на все запросы в течение 24 рабочих часов. </p>
-                        <p>Для скорейшего ответа, пожалуйста, укажите предпочитаемый вами план членства и любые
-                            конкретные вопросы, которые у вас могут возникнуть. Один из наших специалистов по рабочему
-                            пространству будет рад помочь вам в дальнейшем.</p>
                     </div>
                 </div>
             </div>
@@ -217,7 +241,8 @@
                 </div>
                 <div class="flex flex-column footer__mini-form-form footer-form">
                     <div class="flex footer-form__fields border-radius-large">
-                        <input type="email" class="my-input --size-m --no-border border-radius-large" placeholder="E-mail">
+                        <input type="email" class="my-input --size-m --no-border border-radius-large"
+                            placeholder="E-mail">
                         <button class="my-button --size-s border-radius-medium">Отправить</button>
                     </div>
                     <div class="footer-form__agree-text">
@@ -301,7 +326,7 @@
     <!-- ОБЩИЕ СКРИПТЫ -->
     <script src="../assets/scripts/components/header.js"></script>
     <script src="../assets/scripts/fancybox-init.js"></script>
-
+    <script src="../assets/scripts/form.js"></script>
 </body>
 
 </html>
