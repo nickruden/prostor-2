@@ -661,7 +661,17 @@ footer {
     gap: 30px;
 }
 
-.desctop-menu__cmd-item {}
+.desctop-menu__cmd-item {
+    max-width: 47px;
+}
+
+.desctop-menu__cmd-item svg {
+    width: 100%;
+}
+
+.desctop-menu__cmd-item:hover svg path {
+    fill: var(--color-darkGreen);
+}
 
 
 @media (max-width: 1320px) {

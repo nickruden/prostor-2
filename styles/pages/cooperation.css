@@ -251,6 +251,6 @@
 
     .coop-form__texts {
         font-size: 14px;
-        letter-spacing: var(--latter-spacing);
+        letter-spacing: var(--letter-spacing);
     }
 }

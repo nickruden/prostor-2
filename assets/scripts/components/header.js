@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetMenu = document.querySelector(`[data-id-menu="${menuType}"]`);
 
       const isMenuOpen = targetMenu.classList.contains("opened");
-      const isMobileMenuGreen = targetMenu.hasAttribute("green-bg");
+      const isMobileMenuGreen = targetMenu.classList.contains("green-bg");
 
       closeAllMenus();
 
@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         targetMenu.classList.add("opened");
         overlay.classList.add("active");
 
-        if (menuType !== "desktop") {
+        if (menuType == "mobile") {
           overlay.style.backgroundColor = isMobileMenuGreen
-            ? "var(--color-green)"
+            ? "var(--color-darkGreen)"
             : "var(--color-white)";
         }
 
