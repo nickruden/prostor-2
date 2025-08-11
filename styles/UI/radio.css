@@ -1,0 +1,73 @@
+.my-radio-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.my-radio-btn input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.my-radio-btn__circle {
+    width: 33px;
+    height: 33px;
+    border: 1px solid var(--color-green);
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.my-radio-btn__circle::after {
+    padding: 8px;
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background-color: var(--color-green);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.my-radio-btn input:checked+.my-radio-btn__circle::after {
+    opacity: 1;
+}
+
+.my-radio-btn input:checked~.my-radio-btn__label {
+    font-weight: 700;
+}
+
+@media (max-width: 1581px) {}
+
+@media (max-width: 1321px) {}
+
+@media (max-width: 991px) {
+    .my-radio-btn {
+        gap: 10px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 769px) {
+    .my-radio-btn {
+        gap: 11px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .my-radio-btn {
+        gap: 10px;
+        font-size: 17px;
+    }
+}
