@@ -1602,39 +1602,29 @@
                         observeParents: true,
                     });
 
-                    // Добавляем ID для Fancybox
                     const galleryId = `reviews-gallery-${index}`;
                     gallery.querySelectorAll('a').forEach(a => {
                         a.setAttribute('data-fancybox', galleryId);
                     });
 
-                    // Вручную добавляем обработчики событий
-                    const swiperContainer = gallery.closest('.swiper-slide');
-
-                    // При начале взаимодействия с внутренним слайдером
-                    swiperContainer.addEventListener('mouseenter', () => {
+                    gallery.addEventListener('mouseenter', () => {
                         mainReviewsSwiper.allowTouchMove = false;
                         mainReviewsSwiper.mousewheel.disable();
-                        console.log('Блокируем внешний слайдер');
                     });
 
-                    swiperContainer.addEventListener('touchstart', () => {
+                    gallery.addEventListener('touchstart', () => {
                         mainReviewsSwiper.allowTouchMove = false;
                         mainReviewsSwiper.mousewheel.disable();
-                        console.log('Блокируем внешний слайдер (touch)');
                     }, { passive: true });
 
-                    // При окончании взаимодействия с внутренним слайдером
-                    swiperContainer.addEventListener('mouseleave', () => {
+                    gallery.addEventListener('mouseleave', () => {
                         mainReviewsSwiper.allowTouchMove = true;
                         mainReviewsSwiper.mousewheel.enable();
-                        console.log('Разблокируем внешний слайдер');
                     });
 
-                    swiperContainer.addEventListener('touchend', () => {
+                    gallery.addEventListener('touchend', () => {
                         mainReviewsSwiper.allowTouchMove = true;
                         mainReviewsSwiper.mousewheel.enable();
-                        console.log('Разблокируем внешний слайдер (touch)');
                     }, { passive: true });
                 });
             }
