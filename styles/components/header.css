@@ -711,6 +711,14 @@
     .desctop-menu.opened {
         top: 68px;
     }
+
+    .desctop-menu__content {
+        padding: 35px 41px 35px 32px;
+    }
+
+    .desctop-menu__nav {
+        margin-bottom: 0px;
+    }
 }
 
 @media (max-width: 1320px) {
