@@ -18,12 +18,19 @@
 
     <link rel="stylesheet" href="../styles/UI/button.css">
     <link rel="stylesheet" href="../styles/UI/input.css">
+    <link rel="stylesheet" href="../styles/UI/checkbox.css">
+    <link rel="stylesheet" href="../styles/UI/select.css">
+    <link rel="stylesheet" href="../styles/UI/range.css">
+    <link rel="stylesheet" href="../styles/UI/radio.css">
 
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="stylesheet" href="../styles/components/section/mini-form.css">
     <link rel="stylesheet" href="../styles/components/catalog.css">
     <link rel="stylesheet" href="../styles/components/breadcrumbs.css">
+    <link rel="stylesheet" href="../styles/components/my-accordion.css">
+    <link rel="stylesheet" href="../styles/components/form.css">
+    <link rel="stylesheet" href="../styles/components/my-modal.css">
 
 
     <!-- СТИЛИ СТРАНИЦЫ -->
@@ -267,7 +274,7 @@
                         <div class="swiper align-stretch">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <div class="catalog-card border-medium border-radius-medium">
+                                    <a href="./product.html" class="catalog-card border-medium border-radius-medium">
                                         <div class="catalog-card__inner">
                                             <div class="catalog-card__img-wrap">
                                                 <img src="../assets/images/components/catalog-card/card-1.jpg" alt="">
@@ -280,14 +287,14 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <a href="./product.html" class="catalog-card__button"></a>
+                                                    <button class="catalog-card__button" data-open-modal="#order"></button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="catalog-card border-medium border-radius-medium">
+                                    <a href="./product.html" class="catalog-card border-medium border-radius-medium">
                                         <div class="catalog-card__inner">
                                             <div class="catalog-card__img-wrap">
                                                 <img src="../assets/images/components/catalog-card/card-1.jpg" alt="">
@@ -300,14 +307,14 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <a href="./product.html" class="catalog-card__button"></a>
+                                                    <button class="catalog-card__button" data-open-modal="#order"></button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="catalog-card border-medium border-radius-medium">
+                                    <a href="./product.html" class="catalog-card border-medium border-radius-medium">
                                         <div class="catalog-card__inner">
                                             <div class="catalog-card__img-wrap">
                                                 <img src="../assets/images/components/catalog-card/card-1.jpg" alt="">
@@ -320,14 +327,14 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <a href="./product.html" class="catalog-card__button"></a>
+                                                    <button class="catalog-card__button" data-open-modal="#order"></button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="catalog-card border-medium border-radius-medium">
+                                    <a href="./product.html" class="catalog-card border-medium border-radius-medium">
                                         <div class="catalog-card__inner">
                                             <div class="catalog-card__img-wrap">
                                                 <img src="../assets/images/components/catalog-card/card-1.jpg" alt="">
@@ -340,33 +347,32 @@
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <a href="./product.html" class="catalog-card__button"></a>
+                                                    <button class="catalog-card__button" data-open-modal="#order"></button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="catalog-card border-medium border-radius-medium">
+                                    <a href="./product.html" class="catalog-card border-medium border-radius-medium">
                                         <div class="catalog-card__inner">
                                             <div class="catalog-card__img-wrap">
                                                 <img src="../assets/images/components/catalog-card/card-1.jpg" alt="">
                                             </div>
                                             <div class="catalog-card__body">
-                                                <h3 class="catalog-card__title">Топиарий ландшафтный</h3>
+                                                <h3 class="catalog-card__title">Топиарий животные </h3>
                                                 <div class="catalog-card__price">
                                                     <span class="catalog-card__old-price fz-m">200 999 ₽</span>
                                                     <span class="catalog-card__actual-price">136 000 ₽</span>
                                                 </div>
                                                 <div class="flex space-between catalog-card__bottom">
                                                     <div class="catalog-card__bottom-text">Купили 236 раз</div>
-                                                    <a href="./product.html" class="catalog-card__button"></a>
+                                                    <button class="catalog-card__button" data-open-modal="#order"></button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -499,6 +505,66 @@
         </div>
     </footer>
 
+    <div class="my-modal" id="order">
+        <div class="my-modal__container border-large border-radius-medium">
+            <div class="my-modal__header">
+                <button class="close-modal-button"></button>
+            </div>
+            <div class="flex flex-column my-modal__content">
+                <header class="flex flex-column my-modal__text-content">
+                    <h2 class="mb-0">Связаться с нами</h2>
+                    <p class="fz-s">Есть вопросы о нашем коворкинг-пространстве и планах членства? Напишите нам,
+                        используя форму ниже, или позвоните нам.</p>
+                </header>
+                <form action="" class="my-modal__form my-form">
+                    <div class="flex flex-column my-form__fields">
+                        <div class="flex-row">
+                            <div class="input-wrapper" is-required>
+                                <label>
+                                    <span class="label-text">Имя <span class="required">*</span></span>
+                                    <input type="text" class="my-input" placeholder="Имя" required>
+                                </label>
+                            </div>
+                            <div class="input-wrapper" is-required>
+                                <label>
+                                    <span class="label-text">Фамилия <span class="required">*</span></span>
+                                    <input type="text" class="my-input" placeholder="Фамилия" required>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-wrapper" is-required>
+                            <label>
+                                <span class="label-text">Email <span class="required">*</span></span>
+                                <input type="email" class="my-input" placeholder="Email" required>
+                            </label>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>
+                                <span class="label-text">Телефон <span class="required">*</span></span>
+                                <input type="tel" class="my-input" placeholder="Телефон" required>
+                            </label>
+                        </div>
+                        <textarea class="my-textarea" name="description-company" id=""
+                            placeholder="Краткое описание компании и перспектив сотрудничества"></textarea>
+                    </div>
+                    <div class="flex my-form__bottom">
+                        <button type="submit" class="my-button">Оставить заявку</button>
+                        <div class="agreement-text">Подписываясь, я принимаю <a href="">условия эксплуатации</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="flex flex-column my-modal_form-texts fz-s">
+                    <p>Мы стремимся отвечать на все запросы в течение 24 рабочих часов. Для скорейшего ответа,
+                        пожалуйста, укажите предпочитаемый вами план членства и любые конкретные вопросы, которые у вас
+                        могут возникнуть. Один из наших специалистов по рабочему пространству будет рад помочь вам в
+                        дальнейшем.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
     <!-- БИБЛИОТЕКИ -->
     <script src="../assets/libs/swiper/swiper-bundle.min.js"></script>
     <script src="../assets/libs/fancybox/fancybox.umd.js"></script>
@@ -506,6 +572,12 @@
 
     <!-- ОБЩИЕ СКРИПТЫ -->
     <script src="../assets/scripts/components/header.js"></script>
+    <script src="../assets/scripts/fancybox-init.js"></script>
+    <script src="../assets/scripts/components/accordion.js"></script>
+    <script src="../assets/scripts/components/select.js"></script>
+    <script src="../assets/scripts/components/form.js"></script>
+    <script src="../assets/scripts/components/my-modal.js"></script>
+    <script src="../assets/scripts/components/range-input.js"></script>
 
 
     <!-- скрипт каталога -->
