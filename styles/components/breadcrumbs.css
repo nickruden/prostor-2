@@ -78,7 +78,7 @@
     }
 
     .breadcrumbs__path-item {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .breadcrumbs__path-item:not(:last-child)::after {
@@ -92,7 +92,7 @@
     }
 
     .breadcrumbs__path-item {
-        font-size: 10px;
+        font-size: 12px;
         line-height: 0px;
     }
 
