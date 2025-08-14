@@ -379,7 +379,7 @@ footer {
     color: #6F6F6F;
     display: inline-flex;
     align-items: center;
-    
+    width: fit-content;
 }
 
 .phone-link:hover,
