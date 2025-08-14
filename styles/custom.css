@@ -377,8 +377,9 @@ footer {
     font-size: 20px;
     letter-spacing: var(--latter-spacing);
     color: #6F6F6F;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    
 }
 
 .phone-link:hover,
