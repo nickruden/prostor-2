@@ -69,7 +69,7 @@
 @media (max-width: 575px) {
     .breadcrumbs .my-container {
         padding-top: 20px;
-        padding-bottom: 30px;
+        padding-bottom: 32px;
     }
 
     .breadcrumbs__path {
