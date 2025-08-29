@@ -1,15 +1,15 @@
-document.querySelectorAll('.my-range-input').forEach(slider => {
-  const fill = slider.querySelector('.my-range-input__fill');
-  const thumb = slider.querySelector('.my-range-input__thumb');
-  const thumbValue = slider.querySelector('.my-range-input__thumb-value');
-  const labelMin = slider.querySelector('.label-min');
-  const labelMax = slider.querySelector('.label-max');
-  const output = slider.querySelector('.my-range-input-value');
+document.querySelectorAll(".my-range-input").forEach((slider) => {
+  const fill = slider.querySelector(".my-range-input__fill");
+  const thumb = slider.querySelector(".my-range-input__thumb");
+  const thumbValue = slider.querySelector(".my-range-input__thumb-value");
+  const labelMin = slider.querySelector(".label-min");
+  const labelMax = slider.querySelector(".label-max");
+  const output = slider.querySelector(".my-range-input-value");
 
-  const min = parseFloat(slider.getAttribute('min')) || 0;
-  const max = parseFloat(slider.getAttribute('max')) || 100;
-  const step = parseFloat(slider.getAttribute('step')) || 1;
-  let value = parseFloat(slider.getAttribute('value'));
+  const min = parseFloat(slider.getAttribute("min")) || 0;
+  const max = parseFloat(slider.getAttribute("max")) || 100;
+  const step = parseFloat(slider.getAttribute("step")) || 1;
+  let value = parseFloat(slider.getAttribute("value"));
   if (!isFinite(value)) value = min;
 
   if (labelMin) labelMin.textContent = min;
@@ -23,8 +23,12 @@ document.querySelectorAll('.my-range-input').forEach(slider => {
   function updateVisual(val) {
     val = snapToStep(val);
     value = val;
-    slider.setAttribute('value', val);
-    if (output) output.value = val;
+    slider.setAttribute("value", val);
+
+    if (output) {
+      output.value = val;
+      output.dispatchEvent(new Event("input", { bubbles: true }));
+    }
 
     const sliderWidth = slider.clientWidth;
     const thumbWidth = thumb.offsetWidth;
@@ -39,11 +43,11 @@ document.querySelectorAll('.my-range-input').forEach(slider => {
 
     if (thumbValue) {
       if (val !== min && val !== max) {
-        thumbValue.style.display = 'block';
+        thumbValue.style.display = "block";
         thumbValue.textContent = val;
         thumbValue.style.left = `${thumbLeft + thumbWidth / 2}px`;
       } else {
-        thumbValue.style.display = 'none';
+        thumbValue.style.display = "none";
       }
     }
   }
@@ -69,47 +73,51 @@ document.querySelectorAll('.my-range-input').forEach(slider => {
 
   function startDrag(e) {
     e.preventDefault();
-    const move = ev => {
+    const move = (ev) => {
       updateFromPosition(ev.clientX);
     };
     const up = () => {
-      document.removeEventListener('mousemove', move);
-      document.removeEventListener('mouseup', up);
+      document.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseup", up);
     };
-    document.addEventListener('mousemove', move);
-    document.addEventListener('mouseup', up);
+    document.addEventListener("mousemove", move);
+    document.addEventListener("mouseup", up);
   }
 
   function startTouch(e) {
     e.preventDefault();
-    const move = ev => {
+    const move = (ev) => {
       if (ev.touches.length > 0) {
         updateFromPosition(ev.touches[0].clientX);
       }
     };
     const up = () => {
-      document.removeEventListener('touchmove', move);
-      document.removeEventListener('touchend', up);
-      document.removeEventListener('touchcancel', up);
+      document.removeEventListener("touchmove", move);
+      document.removeEventListener("touchend", up);
+      document.removeEventListener("touchcancel", up);
     };
-    document.addEventListener('touchmove', move);
-    document.addEventListener('touchend', up);
-    document.addEventListener('touchcancel', up);
+    document.addEventListener("touchmove", move);
+    document.addEventListener("touchend", up);
+    document.addEventListener("touchcancel", up);
   }
 
-  thumb.addEventListener('mousedown', startDrag);
-  thumb.addEventListener('touchstart', startTouch, { passive: false });
+  thumb.addEventListener("mousedown", startDrag);
+  thumb.addEventListener("touchstart", startTouch, { passive: false });
 
-  slider.addEventListener('mousedown', e => {
+  slider.addEventListener("mousedown", (e) => {
     if (e.target !== thumb) updateFromPosition(e.clientX);
   });
-  slider.addEventListener('touchstart', e => {
-    if (e.target !== thumb && e.touches.length > 0) {
-      updateFromPosition(e.touches[0].clientX);
-    }
-  }, { passive: false });
+  slider.addEventListener(
+    "touchstart",
+    (e) => {
+      if (e.target !== thumb && e.touches.length > 0) {
+        updateFromPosition(e.touches[0].clientX);
+      }
+    },
+    { passive: false }
+  );
 
-  window.addEventListener('resize', () => updateVisual(value));
+  window.addEventListener("resize", () => updateVisual(value));
 
   updateVisual(value);
 });
