@@ -102,6 +102,14 @@
     color: #d7d7d7;
 }
 
+.footer__author-link {
+    color: #000;
+}
+
+.footer__author-link:hover {
+    color: #585858;
+}
+
 @media (max-width: 1581px) {
     .footer__mini-form {
         padding: 70px 0px;
