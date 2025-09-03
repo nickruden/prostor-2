@@ -15,6 +15,7 @@ html,
 body {
     min-height: 100vh;
     font-family: "Montserrat";
+    font-display: fallback;
     font-size: 16px;
     font-weight: 400;
     color: #000;
@@ -41,6 +42,7 @@ h3,
 .h2,
 .h3 {
     font-family: "MontserratAlternates";
+    font-display: swap;
     font-weight: 800;
 }
 
