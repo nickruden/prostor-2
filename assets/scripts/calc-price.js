@@ -31,7 +31,9 @@
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const priceForMeter = 1450; // цена за 1 метр ширины
+    const priceForMeter = 1450; // цена за метр квадратный
+    const lengthOneRoll = 10; // длина одного рулона
+
     const grassTypes = document.querySelectorAll(".price-calc__type-grass");
     const widthRollInputs = document.querySelectorAll('input[name="widthRoll"]');
     const countRollsInput = document.querySelector('input[name="countRolls"]');
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function calculatePrice() {
         const width = getSelectedWidth();
         const count = parseInt(countRollsInput.value) || 0;
-        const total = priceForMeter * width * count;
+        const total = priceForMeter * width * lengthOneRoll * count;
         priceElement.textContent = total;
         return total;
     }
