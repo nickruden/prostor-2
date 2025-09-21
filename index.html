@@ -844,11 +844,26 @@
                 <div class="flex flex-column items-center structure__content">
                     <div class="structure__image-item">
                         <div class="structure__image-wrap border-radius-medium">
-                            <img src="./assets/images/pages/main/structure/main-img.jpg" alt="#">
+                            <img class="active" src="./assets/images/pages/main/structure/structure-1.jpg" alt="#" loading="lazy">
+                            <img src="./assets/images/pages/main/structure/structure-2.jpg" alt="#" loading="lazy">
+                            <img src="./assets/images/pages/main/structure/structure-3.jpg" alt="#" loading="lazy">
+                            <img src="./assets/images/pages/main/structure/main-img.jpg" alt="#" loading="lazy">
                         </div>
                         <span class="structure__image-dec-item fz-xl">Плотные листья</span>
                         <span class="structure__image-dec-item fz-xl">Идентично природе</span>
                         <span class="structure__image-dec-item fz-xl">Густая</span>
+                    </div>
+                    <div class="structure__image-desc active">
+                        <div class="structure__desc-title">1 слой</div>
+                        <div class="structure__desc-text">Проволка</div>
+                    </div>
+                    <div class="structure__image-desc">
+                        <div class="structure__desc-title">2 слой</div>
+                        <div class="structure__desc-text">Пвх</div>
+                    </div>
+                    <div class="structure__image-desc">
+                        <div class="structure__desc-title">3 слой</div>
+                        <div class="structure__desc-text">Соединили 1 и 2 слой</div>
                     </div>
                     <div class="structure__image-desc">
                         <div class="structure__desc-title">4 слой</div>
@@ -1459,6 +1474,30 @@
     <script src="./assets/scripts/components/my-modal.js"></script>
     <script src="./assets/scripts/components/range-input.js"></script>
     <script src="./assets/scripts/calc-price.js"></script>
+
+
+
+    <!-- скрипт для смены слоёв структуры -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".structure__image-wrap img");
+            const descs = document.querySelectorAll(".structure__image-desc");
+            let index = 0;
+
+            function changeSlide() {
+                images.forEach(img => img.classList.remove("active"));
+                descs.forEach(desc => desc.classList.remove("active"));
+
+                images[index].classList.add("active");
+                descs[index].classList.add("active");
+
+                index = (index + 1) % images.length;
+            }
+
+            changeSlide();
+            setInterval(changeSlide, 2000);
+        });
+    </script>
 
 
     <!-- инциализация слайдеров для главной страницы -->
